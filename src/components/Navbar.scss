@@ -6,10 +6,10 @@
   align-items: center;
   position: absolute; 
   top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  background-color: #d9c6ec;
+  width: 900px;
+  height: 80px;
+  z-index: 10;
+  background-color: #f8f9fa;
   border-radius: 20px;
 
   ul {
@@ -26,10 +26,9 @@
     a {
       text-decoration: none;
       color: black;
-      text
 
 
-      &:visited {
+      text &:visited {
         color: #a29c9c; 
       }
 

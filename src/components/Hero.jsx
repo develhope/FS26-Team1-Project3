@@ -7,8 +7,8 @@ export default function Hero() {
     return (
         <main>
         <div className="hero-container">
-            <div className="background-image">
-                <img src={heroImage} alt="Doggo" />
+            <div>
+                <img className="background-image" src={heroImage} alt="Doggo" />
             </div>
             <Navbar />
         </div>
