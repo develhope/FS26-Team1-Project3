@@ -1,0 +1,105 @@
+.article-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  position: relative;
+}
+
+.article-section-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  padding: 60px;
+}
+
+.article-section-container.thin-row {
+  padding: 0 60px;
+  margin-bottom: 30px;
+  position: relative;
+  bottom: 37px;
+  .card-container {
+    padding: 0;
+  }
+}
+
+.txt-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  z-index: 1;
+}
+
+.txt-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  max-width: 500px;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.card-container {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 60px 0;
+}
+
+.section-title {
+  text-align: center;
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 30px;
+  font-size: 32px;
+  color: #240046;
+  z-index: 1;
+  cursor: default;
+}
+
+.section-description {
+  text-align: justify;
+  font-weight: bold;
+  width: 100%;
+  height: fit-content;
+  font-size: 20px;
+  color: #7b2cbf;
+  z-index: 1;
+  cursor: default;
+  padding: 8px;
+}
+
+.cta-button {
+  background-color: #7b2cbf;
+  border-radius: 14px;
+  width: 970px;
+  height: 50px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  -moz-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  -ms-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+  -o-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.cta-button:hover {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
