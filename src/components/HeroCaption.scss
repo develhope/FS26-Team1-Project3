@@ -1,0 +1,24 @@
+.Captioncontent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    margin-right: 435px;
+
+    h2 {
+        color: #f8f9fa;
+    }
+
+    p {
+        color: #f8f9fa;  
+    }
+
+    .btn-primary {
+        color: white;
+        background-color: #7b2cbf;
+        border-radius: 5px;
+        width: 100%;
+        height: 40px;
+        border-color: transparent;
+      }
+}
