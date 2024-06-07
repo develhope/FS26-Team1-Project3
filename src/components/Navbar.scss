@@ -1,0 +1,51 @@
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #d9c6ec;
+  border-radius: 20px;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-left: 1rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      text
+
+
+      &:visited {
+        color: #a29c9c; 
+      }
+
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.btn-primary {
+  color: white;
+  background-color: #7b2cbf;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+  border-color: transparent;
+}
