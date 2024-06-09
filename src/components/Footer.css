@@ -10,7 +10,146 @@
     display: flex;
     width: 100%;
     background-color: aliceblue;
-    justify-content: center;
-    align-items: center;
+    justify-content: center;  
+}
+
+.div-footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #240046;
+    color: #f8f9fa;
+    font-size: medium;
+    gap: 20px;
     
 }
+ .footer-logo {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 10px;
+    justify-content: center; 
+    text-align: center;
+    width: 250px;
+    height: 50px;
+    padding: 10px;
+    flex-direction: column;
+    background-color:#f8f9fa ;
+     
+}
+
+.div-footer ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style-type: none;
+    gap: 20px;
+}
+
+.div-footer ul:hover{
+    text-decoration: underline;
+    line-height: 10px;
+}
+
+.div-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #240046;
+    color: #d9c6ec;
+    border: 5px solid #7b2cbf;
+    border-radius: 20px;
+
+}
+
+
+
+  .fullname-footer {
+    display: flex;
+    gap: 20px;
+    
+  }
+
+  .form-footer {
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+     background-color: #240046;
+     color: #d9c6ec;
+  }
+
+  .form-title {
+    display: flex;
+   margin: 20px;
+    
+  }
+
+  .input {
+    color:#d9c6ec ;
+    border: 2px solid  #7b2cbf;
+    border-radius: 10px;
+    padding: 10px 25px;
+    background: transparent;
+    
+  }
+  
+  .input:active {
+    box-shadow: 2px 2px 15px  #7b2cbf inset;
+  }
+
+  .input::placeholder{
+    color: #d9c6ec;
+  }
+
+  .message {
+    height: 80px;
+    width: 513px;
+    border:2px solid  #7b2cbf ;
+    
+  }
+  
+  button {
+    max-height: 41px;
+    align-items: center;
+    display: flex;
+    font-size: 1.4em;
+    padding: 0.6em 0.8em;
+    border-radius: 0.5em;
+    border: none;
+    background-color:#240046;
+    color:#d9c6ec;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #000000b4;
+  }
+  
+  .container {
+    align-self: center;
+    max-width: 107px;
+    position: relative;
+    padding: 3px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg,  #7b2cbf, #d9c6ec);
+    border-radius: 0.9em;
+    transition: all 0.4s ease;
+  }
+  
+  .container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    border-radius: 0.9em;
+    z-index: -10;
+    filter: blur(0);
+    transition: filter 0.4s ease;
+  }
+  
+  .container:hover::before {
+    background: linear-gradient(90deg,  #7b2cbf, #d9c6ec);
+    filter: blur(1.2em);
+  }
+  .container:active::before {
+    filter: blur(0.2em);
+  }
+  
+
+  
