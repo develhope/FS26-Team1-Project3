@@ -46,7 +46,7 @@
 
 .div-footer ul:hover{
     text-decoration: underline;
-    line-height: 10px;
+    
 }
 
 .div-form {
@@ -101,54 +101,36 @@
   }
 
   .message {
+    display: flex;
+    flex-wrap: wrap;
     height: 80px;
     width: 513px;
     border:2px solid  #7b2cbf ;
     
   }
   
-  button {
-    max-height: 41px;
+  .cta-button {
+    background-color: #7b2cbf;
+    border-radius: 14px;
+    width: 200px;
     align-items: center;
-    display: flex;
-    font-size: 1.4em;
-    padding: 0.6em 0.8em;
-    border-radius: 0.5em;
+    margin-bottom: 20px;
+    height: 50px;
+    font-size: 16px;
+    color: #fff;
     border: none;
-    background-color:#240046;
-    color:#d9c6ec;
     cursor: pointer;
-    box-shadow: 2px 2px 3px #000000b4;
+    z-index: 1;
+  
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    -moz-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    -ms-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    -o-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
   }
   
-  .container {
-    align-self: center;
-    max-width: 107px;
-    position: relative;
-    padding: 3px;
-    margin-bottom: 10px;
-    background: linear-gradient(90deg,  #7b2cbf, #d9c6ec);
-    border-radius: 0.9em;
-    transition: all 0.4s ease;
-  }
-  
-  .container::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    border-radius: 0.9em;
-    z-index: -10;
-    filter: blur(0);
-    transition: filter 0.4s ease;
-  }
-  
-  .container:hover::before {
-    background: linear-gradient(90deg,  #7b2cbf, #d9c6ec);
-    filter: blur(1.2em);
-  }
-  .container:active::before {
-    filter: blur(0.2em);
+  .cta-button:hover {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   }
   
 

@@ -39,7 +39,7 @@ function Footer(params) {
                       <input type="text" name='message' className="input message" placeholder='Message' />   
                     </div>
                     <div className="container">
-                      <button type="submit" className="button">Submit</button>
+                    <button type="button" className="cta-button">Submit</button>
                     </div>
                 </form>
 
