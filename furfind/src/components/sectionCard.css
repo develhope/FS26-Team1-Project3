@@ -61,6 +61,7 @@
   
   .immaginiPet {
     width: 180px;
+    height: 300px;
     padding-top: 30px;
   }
   .nomiPet {
@@ -89,4 +90,24 @@ padding-left: 40px
 }
 .iconContatti:hover{
   cursor: pointer;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.book {
+  margin: 30px;
+}
+.btnaltriannunci {
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+  background-color: #7b2cbf;
+  border-radius: 5px;
+  border-color: transparent;
+  
+}
+.btnaltriannunci:hover {
+ text-decoration: underline;
 }
