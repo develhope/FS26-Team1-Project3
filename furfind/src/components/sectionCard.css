@@ -59,11 +59,34 @@
     transform: rotatey(-80deg);
   }
   
-  p {
-    font-size: 20px;
-    font-weight: bolder;
-  }
-  .primaImmagine {
+  .immaginiPet {
     width: 180px;
     padding-top: 30px;
   }
+  .nomiPet {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+  }
+  .iconPet {
+width: 20px;
+padding-left: 5px;
+  }
+ .position {
+  display: flex;
+  flex-direction: row;
+ }
+ .page {
+padding-left: 40px
+ }
+.contatti {
+  display: flex;
+  justify-content: center;
+  padding-right: 20px;
+}
+.iconContatti {
+  margin: auto;
+}
+.iconContatti:hover{
+  cursor: pointer;
+}
