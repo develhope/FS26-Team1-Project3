@@ -3,22 +3,30 @@
     flex-direction: column;
     gap: 20px;
     justify-content: center;
-    margin-right: 435px;
+    margin-right: 618px;
 
     h2 {
         color: #f8f9fa;
     }
 
+
     p {
         color: #f8f9fa;  
     }
 
+    .buttons {
+        display: flex;
+        gap: 15px;
+    }
+
     .btn-primary {
-        color: white;
+        text-align: center;
+        color: black;
         background-color: #7b2cbf;
         border-radius: 5px;
-        width: 100%;
+        width: 180px;
         height: 40px;
         border-color: transparent;
+        font-size: 14px;
       }
 }
