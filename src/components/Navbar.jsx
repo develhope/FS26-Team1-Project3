@@ -32,12 +32,12 @@ export default function Navbar() {
         </li>
         <li>
           <button className="btn-primary">
-            <a href="/registrazione">Iscriviti</a>
+            <p>Iscriviti</p>
           </button>
         </li>
         <li>
           <button className="btn-primary">
-            <a href="/login">Login</a>
+            <p>Login</p>
           </button>
         </li>
         <li>
