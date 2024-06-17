@@ -8,4 +8,9 @@
   color: #7b2cbf;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.announce-section {
+  padding: 40px;
 }
