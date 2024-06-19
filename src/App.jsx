@@ -1,12 +1,11 @@
-
 // import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Hero from "./components/Hero";
-import "../src/components/App.css";
+import "./css/App.css";
 import SectionCard from "./components/sectionCard";
 import Button from "./components/button";
-import ArticleSection from "../src/assets/components/ArticleSection"
-import Mission from '../src/components/Mission'
-import Footer from '../src/components/Footer'
+import ArticleSection from "./components/ArticleSection";
+import Mission from "./components/Mission";
+import Footer from "./components/Footer";
 
 const pets = [
   {
@@ -163,10 +162,12 @@ function App() {
       <div>
         <ArticleSection />
       </div>
-      <div><Mission/>
-       <Footer/></div>
+      <div>
+        <Mission />
+        <Footer />
+      </div>
     </div>
   );
 }
 
-export default App
+export default App;

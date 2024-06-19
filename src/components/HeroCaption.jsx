@@ -1,4 +1,4 @@
-import "./HeroCaption.scss";
+import "../css/HeroCaption.scss";
 
 export default function HeroCaption() {
   return (

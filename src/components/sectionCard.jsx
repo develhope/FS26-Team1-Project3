@@ -1,4 +1,4 @@
-import "./sectionCard.css"
+import "../css/sectionCard.css"
 const sectionCard = ({ image, name, age, city, description,razza,nameImage}) => {
     return (
       <div>

@@ -1,4 +1,4 @@
-import './Mission.css'
+import '../css/Mission.css'
 import paw from '../assets/paw-2-svgrepo-com.svg'
 
 

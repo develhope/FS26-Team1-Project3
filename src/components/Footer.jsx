@@ -1,4 +1,4 @@
-import './Footer.css'
+import '../css/Footer.css'
 import logo from '../assets/logo furfind white vertical.svg'
 import twitter from '../assets/twitter-icon.svg'
 import instagram from '../assets/instagram-icon.svg'

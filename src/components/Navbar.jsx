@@ -1,4 +1,4 @@
-import "./Navbar.scss";
+import "../css/Navbar.scss";
 import logoImage from "../assets/logo-senza-background.png";
 
 export default function Navbar() {
