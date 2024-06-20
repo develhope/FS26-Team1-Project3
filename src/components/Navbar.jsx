@@ -1,6 +1,7 @@
 import "../css/Navbar.scss";
 import logoImage from "../assets/logo-senza-background.png";
 
+
 export default function Navbar() {
   return (
     <nav className="Navbar">
