@@ -4,7 +4,7 @@
   width: 300px;
   height: 350px;
   background-color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   -webkit-transform: preserve-3d;
   -ms-transform: preserve-3d;
   transform: preserve-3d;
@@ -23,6 +23,7 @@
   justify-content: center;
   text-align: left;
   color: #000;
+  overflow: hidden;
 }
 
 .cover {
@@ -39,7 +40,7 @@
   -ms-transform-origin: 0;
   transform-origin: 0;
 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   -webkit-box-align: center;
@@ -48,6 +49,7 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .book:hover .cover {
@@ -86,7 +88,24 @@
     height: 100%;
     flex-direction: column;
     font-size: larger;
+    position: relative;
+    overflow: hidden;
 }
+
+.card-page::after{
+  content: "";
+  width: 300px;
+  height: 300px;
+  border-radius: 225px;
+  background-color: #d9c6ec;
+  position: absolute;
+  top: -15px;
+  left: -110px;
+  z-index: -2;
+  transform: rotate(30deg);
+}
+
+
 .contatti {
    display: flex;
     justify-content: center;
@@ -117,15 +136,26 @@
   color: #7b2cbf;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 8px;
 }
 .scritte {
   margin-bottom: 10px;
+  font-weight: bold;
 }
+
+.scritte b{
+  color: #240046;
+  font-weight: bolder
+}
+
 .posizione {
+  font-weight: bold;
   color: #7b2cbf;
   margin-bottom: 10px;
+  display: flex;
+  gap: 18px;
+  color: #240046;
 }
 .iconPosizione {
-  stroke: #7b2cbf;
+  stroke: #240046;
 }
