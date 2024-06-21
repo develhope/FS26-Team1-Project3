@@ -40,10 +40,9 @@ export default function ArticleSection() {
         </div>
       </div>
       <div className="article-section-container thin-row">
-        <div className="txt-wrapper"></div>
-        <div className="card-container">
+        
           <MoreArticlesBtn />
-        </div>
+
       </div>
     </div>
   );
