@@ -1,8 +1,9 @@
 .app {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 100%;
+      display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    gap: 60px;
 }
 .title {
   color: #7b2cbf;
@@ -13,4 +14,9 @@
 
 .announce-section {
   padding: 40px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
 }

@@ -39,8 +39,7 @@
   color: #fff;
   font-weight: bolder;
   font-size: larger;
-  margin: 10px;
-  margin-top: 5%;
+  padding: 20px;
 }
 
 .desc {
@@ -48,7 +47,6 @@
   opacity: 85%;
   font-size: small;
   font-weight: lighter;
-  margin-left: 10px;
-  margin-top: 6%;
+  padding: 20px;
   cursor: default;
 }
