@@ -5,6 +5,7 @@ import '../css/Iscrivitiform.scss'
 export default function Iscrivitiform() {
     return (
         <>
+        <div id='form_container'>
             <form action="" className="form_main">
                 <p className="heading">Iscriviti</p>
                 <div className="inputContainer">
@@ -36,6 +37,7 @@ export default function Iscrivitiform() {
                 <button id="btn-primary">Submit</button>
                 <a className="forgotLink" href="#">Forgot your password?</a>
             </form>
+            </div>
         </>
     );
 }
