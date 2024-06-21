@@ -29,10 +29,10 @@
     display: flex;
     justify-content: center;
     list-style-type: none;
-    gap: 20px;
+    gap: 10px;
 }
 
-.div-footer ul:hover{
+.div-footer ul li:hover{
     text-decoration: underline;
     text-underline-offset: 0.2em;
     
@@ -52,11 +52,12 @@
 .social{
   display: flex;
   width: 100%;
-   gap: 20px;
+   gap: 40px;
    justify-content: center;
+   align-items: center;
 }
 
-.media img {
+.media svg {
   display:flex ;
    background-color: #240046;
 }
@@ -65,7 +66,8 @@
  display:flex;
  flex-direction: column;
  justify-content: center;
- max-width: 1200px;
+ align-items: center;
+ 
 }
 
 .copyright p {
@@ -73,5 +75,6 @@
   justify-content: center;
   text-align: center;
   font-size: smaller;
+  max-width: 1200px;
 }
 
