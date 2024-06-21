@@ -12,6 +12,7 @@
   perspective: 2000px;
   display: -webkit-box;
   display: -ms-flexbox;
+  gap: 20px;
   display: flex;
   flex-direction: column;
   -webkit-box-align: center;
@@ -75,13 +76,22 @@
   fill: #7b2cbf;
 }
 
-.page {
-  padding-left: 40px;
+.card-page {
+  padding: 40px;
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    flex-direction: column;
+    font-size: larger;
 }
 .contatti {
-  display: flex;
-  justify-content: center;
-  padding-right: 20px;
+   display: flex;
+    justify-content: center;
+    height: 72%;
+    position: absolute;
+    gap: 30px;
+    margin-left: 40px;
+
 }
 .iconContatti {
   margin: auto;
@@ -102,6 +112,9 @@
 
 .descrizione {
   color: #7b2cbf;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 .scritte {
   margin-bottom: 10px;
