@@ -1,5 +1,5 @@
-import "../css/articleSection.css";
+import "../css/button.css";
 
 export default function MoreArticlesBtn() {
-  return <button className="cta-button">Leggi gli Articoli</button>;
+  return <button className="btnaltriannunci">Leggi gli Articoli</button>;
 }
