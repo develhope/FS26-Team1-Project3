@@ -108,6 +108,15 @@ const pets = [
     description: "Una gatta elegante e indipendente.",
     razza: "Sphynx",
   },
+  {
+    image:"https://inregalo.net/wp-content/uploads/2017/12/regalo-golden-retriever-399x500.jpg",
+  nameImage: "dog7.jpg",
+  name: "Marilù",
+  age: "2 anni",
+  city: "Palermo",
+  description: "Un giovane cane tranquillo e affettuoso.",
+  razza: "Golden Retriever",
+  }
 ];
 
 export default pets;

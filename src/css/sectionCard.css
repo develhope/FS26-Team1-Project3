@@ -120,6 +120,7 @@
 }
 .iconContatti:hover {
   cursor: pointer;
+  fill: #7b2cbf;
 }
 .container {
   display: flex;
@@ -139,6 +140,8 @@
 .scritte {
   margin-bottom: 10px;
   font-weight: bold;
+  margin-left: 20px;
+
 }
 
 .scritte b {
@@ -156,4 +159,5 @@
 }
 .iconPosizione {
   stroke: #240046;
+  margin-left: 20px;
 }
