@@ -8,6 +8,9 @@ export default function Navbar() {
   const handleNavigate = () => {
     navigate('/iscriviti');
   };
+  const handleLoginButton = () => {
+    navigate('/login')
+  };
 
   return (
     <nav className="Navbar">
@@ -43,7 +46,7 @@ export default function Navbar() {
           </button>
         </li>
         <li>
-          <button className="btn-primary">
+          <button onClick={handleLoginButton} className="btn-primary">
             <p>Login</p>
           </button>
         </li>
