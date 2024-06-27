@@ -1,4 +1,4 @@
-// import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+
 import Hero from "./Hero";
 import "../css/App.css";
 import SectionCard from "./sectionCard";
@@ -7,7 +7,6 @@ import ArticleSection from "./ArticleSection";
 import Mission from "./Mission";
 import Footer from "./Footer";
 import '../pets/pets';
-// import sectionCard from "./sectionCard";
 import pets from "../pets/pets";
 
 
@@ -37,6 +36,7 @@ function HomePage() {
           </svg>
         </div>
         <div className="app">
+     
           {pets.map(( { image, name, age, city, description, razza, nameImage }, index) => (
             <SectionCard
               key={index}
@@ -49,7 +49,8 @@ function HomePage() {
               nameImage={nameImage}
             />
           ))}
-        </div>
+          
+        </div> 
         <Button />
       </div>
       <div>

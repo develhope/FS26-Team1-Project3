@@ -1,9 +1,9 @@
 .app {
       display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    gap: 60px;
+   overflow-x:scroll;
+   width: 100%;
+    gap: 30px;
+   align-items: center;
 }
 .title {
   color: #7b2cbf;
@@ -19,4 +19,79 @@
     max-width: 100%;
     justify-content: center;
     align-items: center;
+}
+::-webkit-scrollbar {
+  width: 33.333%;
+  height: 5px;
+
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1c4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7b2cbf;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7b2cbf;
+  cursor: pointer;
+}
+
+ /*.btn-next,
+.btn-prev {
+  width: 60px;
+  background-color: transparent;
+  border-color: transparent;
+  padding-bottom: 10%;
+}
+
+.btn-next2,
+.btn-prev2 {
+  width: 60px;
+  background-color: transparent;
+  border-color: transparent;
+  padding-bottom: 250px;
+}
+.btn-next:hover,
+.btn-prev:hover,
+.btn-next2,
+.btn-prev2 {
+  cursor: pointer;
+}
+
+.btn-next-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1c4;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border-color: #8c8c8c;
+}
+
+.btn-prev-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1c4;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border-color: #8c8c8c;
+  transform: rotate(180deg);
+}
+
+.btn-next-icon:hover,
+.btn-prev-icon:hover {
+  background-color: #8c8c8c;
+}
+
+.btn-next-icon img,
+.btn-prev-icon img {
+  width: 75%;
+  height: auto;
+  margin-left: 4px;
 }
