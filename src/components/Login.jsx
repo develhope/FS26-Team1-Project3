@@ -1,9 +1,14 @@
 import "../css/Login.scss"; 
 
 export function Login() {
+
+if (message.error) {
+  return messages.error
+}
+
   return (
     <div id="form-container">
-      <form className="form_main">
+      <form action='/login' method='POST' className="form_main" >
         <p className="heading">Login</p>
         <div className="inputContainer">
           <svg
@@ -20,6 +25,7 @@ export function Login() {
             type="text"
             className="inputField"
             id="username"
+            name='username'
             placeholder="Username"
           />
         </div>
@@ -39,6 +45,7 @@ export function Login() {
             type="password"
             className="inputField"
             id="password"
+            name='password'
             placeholder="Password"
           />
         </div>
