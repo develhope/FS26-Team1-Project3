@@ -1,19 +1,16 @@
-.app {
-      display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    gap: 60px;
-}
+
+
 .title {
   color: #7b2cbf;
   display: flex;
   justify-content: center;
   align-items: center;
+ margin: 20px;
+
 }
 
 .announce-section {
-  padding: 40px;
+
     display: flex;
     flex-direction: column;
     max-width: 100%;
