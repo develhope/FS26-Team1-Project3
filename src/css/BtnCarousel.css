@@ -22,12 +22,9 @@
  
   .app {
     display: flex;
- overflow-x:hidden;
  width: 100%;
   gap: 30px;
  align-items: center;
- position: relative;
- 
 }
 
 

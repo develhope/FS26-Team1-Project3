@@ -9,7 +9,7 @@ function BtnCarousel() {
 
   const nextCard = () => {
     if (startIndex + cardsPerPage < pets.length) {
-      setStartIndex((prevStartIndex) => prevStartIndex + 1);
+      setStartIndex((prevStartIndex) => prevStartIndex + cardsPerPage);
     } else {
       setStartIndex(0);
     }
@@ -19,7 +19,7 @@ function BtnCarousel() {
     if (startIndex === 0) {
       setStartIndex(pets.length - cardsPerPage);
     } else {
-      setStartIndex((prevStartIndex) => prevStartIndex - 1);
+      setStartIndex((prevStartIndex) => prevStartIndex - cardsPerPage);
     }
   };
 
