@@ -80,7 +80,6 @@
   width: 30px;
   padding: 5px;
   fill: #7b2cbf;
-
 }
 
 .card-page {
@@ -127,10 +126,11 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;}
+  justify-content: center;
+}
 
 .book {
-  margin: 30px;
+  margin: 9px;
 }
 
 .descrizione {
@@ -143,7 +143,6 @@
   margin-bottom: 10px;
   font-weight: bold;
   margin-left: 20px;
-
 }
 
 .scritte b {

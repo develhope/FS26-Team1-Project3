@@ -1,10 +1,10 @@
-import "../css/Login.scss"; 
+import "../css/Login.scss";
 
 export function Login() {
   return (
     <div id="form-container">
       <form className="form_main">
-        <p className="heading">Login</p>
+        <p className="heading">Accedi</p>
         <div className="inputContainer">
           <svg
             className="inputIcon"
