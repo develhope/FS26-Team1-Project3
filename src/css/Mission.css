@@ -78,7 +78,7 @@ select {
   background-color: #f8f9fa;
   border-radius: 16px;
   font-size: large;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 1;
   gap: 20px;
 }
@@ -86,7 +86,7 @@ select {
 
 .zampettando{
   display: flex;
-  gap:20px
+  gap: 20px
 }
 
 .mission-zampetta2 {

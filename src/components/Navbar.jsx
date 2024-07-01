@@ -1,7 +1,17 @@
-import "../css/Navbar.scss";
-import logoImage from "../assets/logo-senza-background.png";
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import '../css/Navbar.scss';
+import logoImage from '../assets/logo-senza-background.png';
 
 export default function Navbar() {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate('/iscriviti');
+  };
+  const handleLoginButton = () => {
+    navigate('/login')
+  };
+
   return (
     <nav className="Navbar">
       <div className="logo-container">
@@ -31,12 +41,12 @@ export default function Navbar() {
           </div>
         </li>
         <li>
-          <button className="btn-primary">
-            <p>Iscriviti</p>
+          <button onClick={handleNavigate} className="btn-primary">
+            Iscriviti
           </button>
         </li>
         <li>
-          <button className="btn-primary">
+          <button onClick={handleLoginButton} className="btn-primary">
             <p>Login</p>
           </button>
         </li>
