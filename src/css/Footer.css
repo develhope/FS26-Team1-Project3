@@ -1,70 +1,73 @@
 .footer-container {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 40px;
-    width: 100%;
-    background-color: #240046;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+  width: 100%;
+  background-color: #240046;
+  gap: 20px;
 }
 
-.block-footer{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;  
-    margin-top: 30px;
-    gap: 40px;
+.block-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 40px;
 }
 
 .div-footer {
-    display: flex;
-    flex-direction: column;
-    background-color: #240046;
-    color: #f8f9fa;
-    font-size: medium;
+  display: flex;
+  flex-direction: column;
+  background-color: #240046;
+  color: #f8f9fa;
+  font-size: medium;
 }
-
 
 .div-footer ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  gap: 10px;
 }
 
-.div-footer ul:hover{
-    text-decoration: underline;
-    text-underline-offset: 0.2em;
-    
+.div-footer ul li:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
-
-.logoFooter img{
+.logoFooter img {
   display: flex;
   max-width: 200px;
 }
 
-.logoFooter{
+.logoFooter {
   display: flex;
   justify-content: center;
 }
 
-.social{
+.social {
   display: flex;
   width: 100%;
-   gap: 20px;
-   justify-content: center;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
 }
 
-.media img {
-  display:flex ;
-   background-color: #240046;
+.media svg {
+  display: flex;
+  background-color: #240046;
+}
+
+.media svg:hover {
+  cursor: pointer;
 }
 
 .copyright {
- display:flex;
- flex-direction: column;
- justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .copyright p {
@@ -72,5 +75,5 @@
   justify-content: center;
   text-align: center;
   font-size: smaller;
+  max-width: 1200px;
 }
-

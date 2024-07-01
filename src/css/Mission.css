@@ -1,4 +1,4 @@
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -54,7 +54,7 @@ select {
     scroll-behavior: auto !important;
     transition: none;
   }
-}
+} */
 
 
 .mission-container {
@@ -63,7 +63,7 @@ select {
   width: 100%;
   justify-content: center;
   align-items: center;
-  padding: 20px 40px;
+ 
 }
 
 .mission-text {
@@ -71,21 +71,23 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 20px;
-  margin-bottom: 30px ;
-  max-width: 750px;
+  margin: 40px;
+  padding: 40px;
+  max-width: 1200px;
   height: 600px;
   background-color: #f8f9fa;
   border-radius: 16px;
   font-size: large;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 1;
   gap: 20px;
 }
 
 
-
+.zampettando{
+  display: flex;
+  gap: 20px
+}
 
 .mission-zampetta2 {
   display: flex;
@@ -93,5 +95,41 @@ select {
   gap: 20px;
   width: 25px;
   height: 25px;
+  fill: #7b2cbf;
  
+}
+
+
+
+.misssion-parag{
+ color: #7b2cbf;
+ font-size: 20px;
+ font-weight: bold;
+}
+
+.mission-title{
+  color: #240046;
+}
+
+.mission-fondamentals{
+      gap: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mission-container p{
+  color: #7b2cbf;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mission-fondamentals p b{
+  color: #240046;}
+
+.mission-fondamentals h3{
+  color: #240046;
+}
+
+.grazie{
+  color: #240046;
 }

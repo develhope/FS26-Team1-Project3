@@ -1,0 +1,30 @@
+.carousel-button {
+    background-color:white;
+    color: #7b2cbf;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  
+  .carousel-button:hover {
+    cursor: pointer;
+    color: #d9c6ec;
+  }
+  .containerCarousel {
+    display: flex;
+    overflow-x: hidden;
+    width: 100%;
+    justify-content: center;
+    
+  }
+ 
+  .app {
+    display: flex;
+ width: 100%;
+  gap: 30px;
+ align-items: center;
+}
+
+
