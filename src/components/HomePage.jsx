@@ -7,8 +7,8 @@ import ArticleSection from "./ArticleSection";
 import Mission from "./Mission";
 import Footer from "./Footer";
 import '../pets/pets';
-// import sectionCard from "./sectionCard";
 import pets from "../pets/pets";
+
 
 
 
