@@ -8,12 +8,12 @@ function BtnCarousel() {
 
   const scrollNext = () => {
     const container = containerRef.current;
-    container.scrollLeft += 1275; // Adjust scroll amount as needed
+    container.scrollLeft += 1275;
   };
 
   const scrollPrev = () => {
     const container = containerRef.current;
-    container.scrollLeft -= 1275; // Adjust scroll amount as needed
+    container.scrollLeft -= 1275;
   };
 
   return (
