@@ -72,6 +72,7 @@ body {
   margin: 10px;
   border-radius: 5px;
   gap: 10px;
+  justify-content: center;
 }
 
 .first-row {
