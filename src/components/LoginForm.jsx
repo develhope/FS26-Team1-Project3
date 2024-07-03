@@ -6,7 +6,7 @@ export default function LoginForm() {
     <div className="form-container">
       <FormBackground />
       <div className="form_area">
-        <p className="title">LOG IN</p>
+        <p className="title">ACCEDI</p>
         <form action="">
           <div className="form_group">
             <label className="sub_title" htmlFor="name">

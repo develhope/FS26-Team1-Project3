@@ -1,4 +1,4 @@
-import "../css/Login.scss"; 
+import "../css/Login.scss";
 
 export function Login() {
 
@@ -9,7 +9,7 @@ if (message.error) {
   return (
     <div id="form-container">
       <form action='/login' method='POST' className="form_main" >
-        <p className="heading">Login</p>
+        <p className="heading">Accedi</p>
         <div className="inputContainer">
           <svg
             className="inputIcon"

@@ -1,19 +1,15 @@
-
-
 .title {
   color: #7b2cbf;
   display: flex;
   justify-content: center;
   align-items: center;
- margin: 20px;
-
+  margin: 20px;
 }
 
 .announce-section {
-
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
 }
