@@ -20,6 +20,13 @@ export default function Navbar() {
   };
 
   return (
+    <>
+<label className="menuButton">
+        <input type="checkbox" id="check" />
+        <span className="top"></span>
+        <span className="mid"></span>
+        <span className="bot"></span>
+      </label>
     <nav className="Navbar">
       <div className="logo-container">
         <img className="logo-FurFind" src={logoImage} alt="FurFind Logo" />
@@ -171,5 +178,6 @@ export default function Navbar() {
         <li></li>
       </ul>
     </nav>
+    </>
   );
 }
