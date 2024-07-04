@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../css/Footer.css';
 import logo from '../assets/logo furfind white vertical.svg';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,7 +9,7 @@ function Footer() {
     navigate('/about');
   };
 
-  // Stato per la visibilità del dropdown
+
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
   const handleMouseEnter = () => {
