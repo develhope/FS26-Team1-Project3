@@ -4,7 +4,7 @@
   margin-top: 50px;
   justify-content: center;
   align-items: center;
-  position: absolute; 
+  position: absolute;
   top: 0;
   width: 1200px;
   height: 80px;
@@ -13,11 +13,10 @@
   border-radius: 20px;
   position: absolute;
 
-.logo-FurFind {
-  padding: 10px;
-  width: 230px;
-}
-
+  .logo-FurFind {
+    padding: 10px;
+    width: 230px;
+  }
 
   ul {
     display: flex;
@@ -32,38 +31,14 @@
       margin-left: 1rem;
     }
 
-
-   
-
-    .access-icon {
-      padding: 2px;
-        border: transparent;
-  background-color: transparent;
-  color: #7b2cbf;
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    -moz-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    -ms-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    -o-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    
-    }
-
-    & .access-icon:hover {
-      cursor: pointer;
-      transform: scale(1.1);
-    }
-
-
     a {
       text-decoration: none;
       color: black;
 
-
       text &:visited {
-        color: #a29c9c; 
+        color: #a29c9c;
       }
 
-      
       &:hover {
         text-decoration: underline;
       }
@@ -71,7 +46,23 @@
   }
 }
 
-
+.icon-group {
+  height: 36px;
+  width: 36px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 4px;
+  padding: 2px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    width 300ms ease-in-out 0s,
+    background-color 300ms linear 200ms;
+}
 
 .group {
   display: flex;
@@ -79,9 +70,9 @@
   align-items: center;
   position: relative;
   max-width: 190px;
- }
- 
- .input {
+}
+
+.input {
   width: 100%;
   height: 40px;
   line-height: 28px;
@@ -92,34 +83,65 @@
   outline: none;
   background-color: #f3f3f4;
   color: #0d0c22;
-  transition: .3s ease;
- }
- 
- .input::placeholder {
+  transition: 0.3s ease;
+}
+
+.input::placeholder {
   color: #9e9ea7;
- }
- 
- .input:focus, input:hover {
+}
+
+.input:focus,
+input:hover {
   outline: none;
   border-color: #7b2cbf;
   background-color: #fff;
   box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
- }
- 
- .icon {
+}
+
+.icon {
   position: absolute;
   left: 1rem;
   fill: #9e9ea7;
   width: 1rem;
   height: 1rem;
- }
- 
+}
 
- 
+.access-icon {
+  height: 36px;
+  aspect-ratio: 1 / 1;
+  background-color: transparent;
+  border-color: transparent;
+}
 
- 
- 
- 
- 
- 
+.icon-group:hover,
+.icon-group:focus-visible {
+  width: 192px;
+  background-color: var(--color-mid);
+  transition:
+    width 300ms ease-in-out 0s,
+    background-color 100ms linear 0s;
+}
+.icon-group:focus-visible {
+  outline: 1px solid var(--color-mid);
+  outline-offset: 4px;
+}
+.icon-group:active {
+  opacity: 0.9;
+}
+.icon-group::after {
+  content: attr(tooltip);
+  margin-left: 12px;
+  animation: 600ms linear forwards;
+}
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
