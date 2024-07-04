@@ -83,3 +83,13 @@
   font-size: smaller;
   max-width: 1200px;
 }
+
+.dropdown-menu {
+  background-color: #240046;
+  padding: 10px;
+  position: absolute;
+  color: #fff;
+  border-radius: 4px;
+  margin-top: 10px;
+  z-index: 1;
+}
