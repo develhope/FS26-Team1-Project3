@@ -49,8 +49,11 @@ export default function Navbar() {
             <input placeholder="Cerca" type="search" className="input" />
           </div>
         </li>
-
-        <li className="icon-group">
+        <li
+          className="icon-group"
+          tooltip="Iscriviti a FurFind"
+          onClick={handleNavigate}
+        >
           <button onClick={handleNavigate} className="access-icon">
             <svg
               fill="#7b2cbf"
@@ -66,7 +69,11 @@ export default function Navbar() {
             </svg>
           </button>
         </li>
-        <li className="icon-group">
+        <li
+          className="icon-group"
+          tooltip="Accedi a FurFind"
+          onClick={handleLoginButton}
+        >
           <button onClick={handleLoginButton} className="access-icon">
             <svg
               fill="#7b2cbf"
@@ -81,8 +88,16 @@ export default function Navbar() {
             </svg>
           </button>
         </li>
-        <li className="icon-group">
-          <button onClick={handleAnnounceButton} className="access-icon">
+        <li
+          className="icon-group"
+          tooltip="Aggiungi annuncio"
+          onClick={handleAnnounceButton}
+        >
+          <button
+            onClick={handleAnnounceButton}
+            tooltip="Aggiungi Annuncio"
+            className="access-icon"
+          >
             <svg
               fill="#7b2cbf"
               height="35px"
