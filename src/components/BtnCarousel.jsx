@@ -24,7 +24,7 @@ function BtnCarousel() {
       <div className="containerCarousel" ref={containerRef}>
         {pets.map(
           (
-            { image, name, age, city, description, razza, nameImage },
+            { image, name, age, city, description, razza, nameImage,owner },
             index
           ) => (
             <div key={index} className="carousel-card">
@@ -36,6 +36,7 @@ function BtnCarousel() {
                 description={description}
                 razza={razza}
                 nameImage={nameImage}
+                owner={owner}
               />
             </div>
           )
