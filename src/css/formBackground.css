@@ -80,3 +80,26 @@
     transform: scale(0.8);
   }
 }
+
+/* Media queries */
+
+/* Max width 1025px */
+@media (max-width: 1025px) {
+  .form-container {
+    overflow: hidden; /* Rimuove lo scroll orizzontale */
+  }
+}
+
+/* Max width 769px */
+@media (max-width: 769px) {
+  .form-container {
+    overflow: hidden; /* Rimuove lo scroll orizzontale */
+  }
+}
+
+/* Max width 480px */
+@media (max-width: 480px) {
+  .form-container {
+    overflow: hidden; /* Rimuove lo scroll orizzontale */
+  }
+}
