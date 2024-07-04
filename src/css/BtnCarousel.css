@@ -71,6 +71,9 @@
     flex-direction: row; 
     gap: 0;
   }
+  .carousel-button {
+    display: none;
+  }
 
   }
 
@@ -85,5 +88,8 @@
     width: 100%; 
     gap: 0; 
     flex-direction: row;
+  }
+  .carousel-button {
+    display: none;
   }
 }

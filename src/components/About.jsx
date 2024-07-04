@@ -1,8 +1,12 @@
+import { Link, useNavigate } from "react-router-dom";
 import "../css/about.css";
 import FormBackground from "./FormBackground";
 
 function About() {
-  
+const navigate = useNavigate();
+const handleHomeNavigate= ()=>{
+  navigate('/HomePage.jsx')
+}
   return (
 
     <div className="about-container">
@@ -73,7 +77,7 @@ function About() {
         </div>
       </div>
       <div className="go-home">
-        <a href="./">Torna alla Home</a>
+        <Link to='/' onClick={handleHomeNavigate}>Home</Link>
       </div>
     </div>
   );
