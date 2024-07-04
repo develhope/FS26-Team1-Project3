@@ -47,3 +47,43 @@
   align-items: center;
   justify-content: center;
 }
+@media (max-width:1025px) {
+  .containerCarousel {
+    width: 100%; 
+    flex-direction: row; 
+  }
+
+  .app {
+    width: 100%; 
+    gap: 0; 
+    flex-direction: row; 
+  }
+}
+
+@media (max-width:769px) {
+  .containerCarousel {
+    width: 100%; 
+    flex-direction: row; 
+  }
+
+  .app {
+    width: 100%; 
+    flex-direction: row; 
+    gap: 0;
+  }
+
+  }
+
+@media (max-width:480px) {
+  .containerCarousel {
+    width: 100%;
+    flex-direction: row; 
+    
+  }
+
+  .app {
+    width: 100%; 
+    gap: 0; 
+    flex-direction: row;
+  }
+}
