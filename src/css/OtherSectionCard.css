@@ -1,0 +1,125 @@
+.card {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+  }
+  
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.999s;
+  }
+  
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .card-front {
+    background-color: #6A2C70;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border: 10px solid #6A2C70;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(0deg);
+  }
+  
+  .card-back {
+    background-color: #F08A5D;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border: 10px solid #F08A5D;
+    border-radius: 10px;
+    justify-content: center;
+    font-size: 24px;
+    transform: rotateY(180deg);
+  }
+
+.containerAnnunci{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d9c6ec;
+}
+  .navAnnunci{
+    display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  width: 1200px;
+  height: 80px;
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  gap: 30px;
+  }
+  .logoNav{
+    width: 230px;
+    padding: 5px
+  }
+.contSelect{
+    display: flex;
+    gap: 10px;
+}
+.formAnnunci{
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: 0.3s ease;
+}
+.formAnnunci::placeholder {
+    color: #9e9ea7;
+  }
+  
+  .formAnnunci:focus,
+  .formAnnunci:hover {
+    outline: none;
+    border-color: #7b2cbf;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+  }
+.selectAnnunci{
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: 0.3s ease;
+    
+}
+.selectAnnunci:focus,
+.selectAnnunci:hover {
+  outline: none;
+  border-color: #7b2cbf;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+}
+.textSelect{
+    padding-top: 10px;
+}
