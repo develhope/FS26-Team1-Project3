@@ -1,12 +1,14 @@
 const otherPets = [
     {
-      image: "https://www.animalfriends.it/wp-content/uploads/2023/04/dog8.jpg",
+      image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgByBT5IiAT_a2x9pUVb4VMoOrlzHH7Jrzj-HB5jzHlR4lNLMS",
       nameImage: "dog8.jpg",
       name: "Shadow",
       age: "5 anni",
       city: "Torino",
       description: "Un cane leale e protettivo.",
       razza: "Pastore Tedesco",
+      type:"Cane",
+      size:"Taglia grande",
       owner: {
         name: "Francesco Grigio",
         phone: "320-876-5432",
@@ -21,6 +23,7 @@ const otherPets = [
       city: "Bari",
       description: "Un gatto tranquillo e affettuoso.",
       razza: "Persiano",
+      type:"Gatto",
       owner: {
         name: "Giovanna Viola",
         phone: "327-654-3211",
@@ -35,6 +38,8 @@ const otherPets = [
       city: "Torino",
       description: "Un cucciolo energico e giocoso.",
       razza: "Bulldog Francese",
+      type:"Cane",
+      size:"Taglia piccola",
       owner: {
         name: "Alessandro Nero",
         phone: "322-543-7890",
@@ -49,6 +54,7 @@ const otherPets = [
       city: "Firenze",
       description: "Un gattino curioso e avventuroso.",
       razza: "Bengala",
+      type:"Gatto",
       owner: {
         name: "Lorenzo Blu",
         phone: "321-987-6544",
@@ -63,6 +69,8 @@ const otherPets = [
       city: "Roma",
       description: "Un cane affettuoso e obbediente.",
       razza: "Rottweiler",
+      type:"Cane",
+      size:"Taglia grande",
       owner: {
         name: "Marta Rossi",
         phone: "324-567-8902",
@@ -77,6 +85,7 @@ const otherPets = [
       city: "Napoli",
       description: "Un gatto socievole e affettuoso.",
       razza: "Siberiano",
+      type:"Gatto",
       owner: {
         name: "Carla Verde",
         phone: "315-789-6544",
@@ -91,6 +100,8 @@ const otherPets = [
       city: "Milano",
       description: "Un cane fedele e coraggioso.",
       razza: "Dobermann",
+      type:"Cane",
+      size:"Taglia grande",
       owner: {
         name: "Marco Bianchi",
         phone: "316-547-8391",
@@ -105,6 +116,7 @@ const otherPets = [
       city: "Verona",
       description: "Una gatta dolce e coccolona.",
       razza: "Ragdoll",
+      type:"Gatto",
       owner: {
         name: "Simona Gialli",
         phone: "318-765-4322",
@@ -119,6 +131,8 @@ const otherPets = [
         city: "Cagliari",
         description: "Un cane affettuoso e vivace.",
         razza: "Border Collie",
+        type:"Cane",
+        size:"Taglia media",
         owner: {
           name: "Paolo Rossi",
           phone: "327-654-3212",
@@ -133,6 +147,7 @@ const otherPets = [
         city: "Trieste",
         description: "Un gatto dolce e giocoso.",
         razza: "British Shorthair",
+        type:"Gatto",
         owner: {
           name: "Elena Bianchi",
           phone: "329-678-1235",
@@ -147,6 +162,8 @@ const otherPets = [
         city: "Perugia",
         description: "Un cucciolo energico e affettuoso.",
         razza: "Cocker Spaniel",
+        type:"Cane",
+        size:"Taglia piccola",
         owner: {
           name: "Giovanni Verde",
           phone: "312-456-7891",
@@ -154,4 +171,4 @@ const otherPets = [
         }
       }
     ];
-  
+  export default otherPets

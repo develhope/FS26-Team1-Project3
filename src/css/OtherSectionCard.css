@@ -1,60 +1,16 @@
-.card {
-    width: 300px;
-    height: 200px;
-    perspective: 1000px;
-  }
-  
-  .card-inner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.999s;
-  }
-  
-  .card:hover .card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .card-front,
-  .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-  }
-  
-  .card-front {
-    background-color: #6A2C70;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    border: 10px solid #6A2C70;
-    border-radius: 10px;
-    justify-content: center;
-    font-size: 24px;
-    transform: rotateY(0deg);
-  }
-  
-  .card-back {
-    background-color: #F08A5D;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    border: 10px solid #F08A5D;
-    border-radius: 10px;
-    justify-content: center;
-    font-size: 24px;
-    transform: rotateY(180deg);
-  }
 
 .containerAnnunci{
     display: flex;
-    width: 100%;
+    min-width: 100%;
     flex-direction: column;
     align-items: center;
-    background-color: #d9c6ec;
+    background-color: #7b2cbf;
+    min-height: 100vh;
+
+
+   
 }
+
   .navAnnunci{
     display: flex;
   flex-direction: row;
@@ -66,7 +22,7 @@
   height: 80px;
   background-color: #f8f9fa;
   border-radius: 20px;
-  gap: 30px;
+  gap: 20px;
   }
   .logoNav{
     width: 230px;
@@ -122,4 +78,93 @@
 }
 .textSelect{
     padding-top: 10px;
+}
+.otherCard {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+ padding-top:100px;
+ width: 1200px;
+ z-index: 1;
+}
+.containerOtherCard{
+display: flex;
+flex-direction: row;
+border-radius: 16px;
+background-color: #fff;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+gap: 50px;
+align-items: center;
+padding-right: 50px;
+
+}
+.nomeImmagine {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.descrizioniCard {
+  display:flex ;
+  flex-direction: column;
+  width: 100%; 
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+ padding: 30px;
+  width: 100%;
+  height: 200px;
+  
+}
+.righeContatti {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+padding: 30px;
+  height: 200px;
+  color: #7b2cbf;
+  gap: 10px;
+  font-weight: bolder;
+  font-size: 18px;
+}
+.righeContatti b {
+  color: #240046;
+}
+.immaginiPet {
+  width: 250px;
+  height: 250px;
+}
+
+.scritte {
+  margin-bottom: 10px;
+  font-weight: bold;
+  margin-left: 20px;
+  color: #7b2cbf;
+  font-size: 18px;
+}
+
+.scritte b {
+  color: #240046;
+  font-weight: bolder;
+}
+.iconeContatti {
+display: flex;
+stroke: #7b2cbf;
+justify-content: center;
+gap: 50px;
+
+}
+.cuoreAnnunci :hover {
+  fill:#7b2cbf;
+}
+.iconeContatti :hover {
+  cursor: pointer;
+}
+.animaleNonTrovato {
+  color: #fff;
+  font-weight: bolder;
+  font-size: 30px;
+  display: flex;
+  padding: 50px;
 }
