@@ -1,24 +1,21 @@
-import{ useState } from 'react';
-import '../css/Footer.css';
-import logo from '../assets/logo furfind white vertical.svg';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import "../css/Footer.css";
+import logo from "../assets/logo furfind white vertical.svg";
+import { Link, useNavigate } from "react-router-dom";
 
 function Footer() {
   const navigate = useNavigate();
   const handleAboutButton = () => {
-    navigate('/about');
+    navigate("/about");
   };
 
-  // Stato per la visibilità del dropdown
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
-  const handleMouseEnter = () => {
-    setIsDropdownVisible(true);
+  const handleContactClick = () => {
+    setIsDropdownVisible((prevState) => !prevState); 
   };
 
-  const handleMouseLeave = () => {
-    setIsDropdownVisible(false);
-  };
+ 
 
   return (
     <div>
@@ -40,11 +37,7 @@ function Footer() {
               <li id="services">
                 <a>Servizi</a>
               </li>
-              <li
-                id="contact"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
+              <li id="contact" onClick={handleContactClick}>
                 <a>Contatti</a>
                 {isDropdownVisible && (
                   <div className="dropdown-menu">
@@ -107,7 +100,7 @@ function Footer() {
               </svg>
             </div>
             <div className="media">
-            <svg
+              <svg
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
                 y="0px"
@@ -122,6 +115,11 @@ function Footer() {
               </svg>
             </div>
           </div>
+          <div className="copyright">
+            <p>Le informazioni riguardanti gli animali adottabili presentati su Furfind sono fornite dalle persone che ne hanno assunto la cura. Furfind non effettua alcun controllo o verifica sull&#39;accuratezza di queste informazioni. Tutte queste informazioni devono essere verificate con il rifugio e/o la persona interessata e in particolare che l&#39;animale sia ancora disponibile per l&#39;adozione.
+            Lo stato di salute e il comportamento degli animali presentati, trovati o adottati tramite Furfind sono sotto la piena responsabilità dell&#39;organismo che li propone per l&#39;adozione o della persona che li adotta. La responsabilità dell&#39;uso di Furfind è esclusivamente e integralmente dell&#39;utente che esonera Furfind da ogni responsabilità riguardante l&#39;adozione di un animale presentato su questo sito.</p>
+            <p>©2024 Furfind</p>
+          </div>
         </div>
       </div>
     </div>
@@ -129,3 +127,4 @@ function Footer() {
 }
 
 export default Footer;
+
