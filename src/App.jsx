@@ -6,6 +6,7 @@ import NewAnnounce from "./components/NewAnnounce.jsx";
 import About from "./components/About.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 
+import OtherSectionCard from "./components/OtherSectionCard.jsx";
 function App() {
   return (
     <Router>
@@ -16,6 +17,8 @@ function App() {
         <Route path="/annuncio" element={<NewAnnounce />} />
         <Route path="/about" element={<About />} />
         <Route path="/dashboard" element={<Dashboard />} />
+
+        <Route path="/annunci" element={<OtherSectionCard />} />
       </Routes>
     </Router>
   );

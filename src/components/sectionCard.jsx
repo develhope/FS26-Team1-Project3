@@ -33,9 +33,9 @@ const SectionCard = ({
   };
 
   const handleWhatsappClick = (event) => {
-    event.stopPropagation(); // Impedisce la propagazione del clic al componente padre
+    event.stopPropagation(); 
     const whatsappLink = `https://wa.me/${owner.phone}`;
-    window.open(whatsappLink, "_blank"); // Apre il link WhatsApp in una nuova finestra
+    window.open(whatsappLink, "_blank"); 
   };
 
   const handleMouseLeave = () => {

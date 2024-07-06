@@ -3,10 +3,13 @@ const pets = [
     image: "https://www.vitadacani.org/wp-content/uploads/2023/08/Nome_sitoVert2-28.jpg",
     nameImage: "dog1.jpg",
     name: "Fido",
+    type: "Cane",
     age: "3 anni",
     city: "Milano",
     description: "Un cane molto amichevole e giocherellone.",
     razza: "Labrador",
+    size: "Taglia grande",
+    
     owner: {
       name: "Mario Rossi",
       phone: "3665364606",
@@ -21,6 +24,7 @@ const pets = [
     city: "Roma",
     description: "Una gatta dolcissima che ama le coccole.",
     razza: "Europeo",
+    type: "Gatto",
     owner: {
       name: "Luca Bianchi",
       phone: "321-654-9870",
@@ -35,6 +39,7 @@ const pets = [
     city: "Napoli",
     description: "Una gattina curiosa e vivace.",
     razza: "Siamese",
+    type:"Gatto",
     owner: {
       name: "Giulia Verdi",
       phone: "312-456-7890",
@@ -49,6 +54,8 @@ const pets = [
     city: "Firenze",
     description: "Un cane coraggioso e affettuoso.",
     razza: "Golden Retriever",
+    type:"Cane",
+    size:"Taglia media",
     owner: {
       name: "Alessandro Neri",
       phone: "324-567-8901",
@@ -63,6 +70,7 @@ const pets = [
     city: "Bologna",
     description: "Una gatta vivace e intelligente.",
     razza: "Europea",
+    type:"Gatto",
     owner: {
       name: "Martina Gialli",
       phone: "320-123-4567",
@@ -77,6 +85,8 @@ const pets = [
     city: "Verona",
     description: "Un cucciolo di cane giocherellone.",
     razza: "Beagle",
+    type:"Cane",
+    size:"Taglia piccola",
     owner: {
       name: "Paolo Blu",
       phone: "329-987-6543",
@@ -91,6 +101,7 @@ const pets = [
     city: "Palermo",
     description: "Un gatto con un carattere affabile.",
     razza: "Maine Coon",
+    type:"Gatto",
     owner: {
       name: "Anna Rosa",
       phone: "318-765-4321",
@@ -105,6 +116,8 @@ const pets = [
     city: "Genova",
     description: "Una cagnolina elegante e amorevole.",
     razza: "Meticcio",
+    type:"Cane",
+    size:"Taglia grande",
     owner: {
       name: "Giorgio Verde",
       phone: "327-654-3210",
@@ -119,6 +132,7 @@ const pets = [
     city: "Catania",
     description: "Un gatto affettuoso e giocoso.",
     razza: "British Shorthair",
+    type:"Gatto",
     owner: {
       name: "Roberta Gialla",
       phone: "316-547-8390",
@@ -133,6 +147,8 @@ const pets = [
     city: "Milano",
     description: "Un cane vivace e protettivo.",
     razza: "Meticcio",
+    type:"Cane",
+    size:"Taglia piccola",
     owner: {
       name: "Federico Rosso",
       phone: "311-876-5432",
@@ -147,6 +163,7 @@ const pets = [
     city: "Roma",
     description: "Una gatta elegante e indipendente.",
     razza: "Sphynx",
+    type:"Gatto",
     owner: {
       name: "Elena Viola",
       phone: "329-678-1234",
@@ -161,6 +178,8 @@ const pets = [
     city: "Palermo",
     description: "Un giovane cane tranquillo e affettuoso.",
     razza: "Golden Retriever",
+    type:"Cane",
+    size:"Taglia grande",
     owner: {
       name: "Riccardo Nero",
       phone: "315-789-6543",
