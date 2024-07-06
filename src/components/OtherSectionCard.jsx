@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../css/OtherSectionCard.css";
 import logoImage from "../assets/logo-senza-background.png";
 import otherPetsData from "../pets/otherPets";
