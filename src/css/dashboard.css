@@ -1,0 +1,42 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.dashboard-menu {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 100vh;
+  background-color: #240046;
+  color: #f8f9fa;
+}
+
+.dashboard-menu ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 20px;
+  margin: 0;
+  gap: 10px;
+}
+
+.dashboard-menu li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
