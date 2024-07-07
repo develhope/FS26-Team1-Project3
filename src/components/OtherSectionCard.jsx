@@ -3,6 +3,7 @@ import "../css/OtherSectionCard.css";
 import logoImage from "../assets/logo-senza-background.png";
 import otherPetsData from "../pets/otherPets";
 import FormBackground from "./FormBackground";
+import Footer from "./Footer"
 
 function OtherSectionCard() {
   const [otherPets, setOtherPets] = useState([]);
@@ -60,6 +61,7 @@ function OtherSectionCard() {
   };
 
   return (
+    <div>
     <div className="containerAnnunci">
       <FormBackground/>
       <nav className="navAnnunci">
@@ -218,7 +220,8 @@ function OtherSectionCard() {
           )
         )}
       </div>
-    </div>
+    </div> <Footer/></div>
+   
   );
 }
 export default OtherSectionCard;
