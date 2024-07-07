@@ -1,6 +1,6 @@
 const otherPets = [
     {
-      image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQgByBT5IiAT_a2x9pUVb4VMoOrlzHH7Jrzj-HB5jzHlR4lNLMS",
+      image: "https://assets.annuncianimali.it/image/5185ed37-18f6-40b3-893b-0230a0f9a52d/image_wm/image.webp",
       nameImage: "dog8.jpg",
       name: "Shadow",
       age: "5 anni",
@@ -16,7 +16,7 @@ const otherPets = [
       }
     },
     {
-      image: "https://www.petportal.it/wp-content/uploads/2023/06/cat7.jpg",
+      image: "https://animaliadozionetoscana.wordpress.com/wp-content/uploads/2014/09/2014-08-24-18-41-12.jpg",
       nameImage: "cat7.jpg",
       name: "Simba",
       age: "8 anni",
@@ -31,7 +31,7 @@ const otherPets = [
       }
     },
     {
-      image: "https://www.fidopets.it/wp-content/uploads/2023/07/dog9.jpg",
+      image: "https://www.rescuebouledoguefranceseitalia.it/wp-content/uploads/2023/07/12-e1688748715482.jpg",
       nameImage: "dog9.jpg",
       name: "Duke",
       age: "1 anno",
@@ -47,7 +47,7 @@ const otherPets = [
       }
     },
     {
-      image: "https://www.gattolandia.it/wp-content/uploads/2023/08/cat8.jpg",
+      image: "https://i.pinimg.com/736x/d2/e8/66/d2e866fb22a3705c19dd4ad4b25b2fdc.jpg",
       nameImage: "cat8.jpg",
       name: "Tigro",
       age: "6 mesi",
@@ -62,7 +62,7 @@ const otherPets = [
       }
     },
     {
-      image: "https://www.animalhouse.it/wp-content/uploads/2023/09/dog10.jpg",
+      image: "https://manualstech.ams3.cdn.digitaloceanspaces.com/images/adottame/images/613b4cddbcd81_2021-09-10-121733-WhatsApp%20Image%202021-09-10%20at%2013.19.13.thumb.jpeg",
       nameImage: "dog10.jpg",
       name: "Bruno",
       age: "4 anni",
@@ -78,7 +78,7 @@ const otherPets = [
       }
     },
     {
-      image: "https://www.gattitaliani.it/wp-content/uploads/2023/10/cat9.jpg",
+      image: "https://citynews-trevisotoday.stgy.ovh/~media/11252408296321/278205968_5705196749494525_7244948194860916275_n-2.jpg",
       nameImage: "cat9.jpg",
       name: "Oreo",
       age: "3 anni",
@@ -93,10 +93,10 @@ const otherPets = [
       }
     },
     {
-      image: "https://www.adorabileamico.it/wp-content/uploads/2023/11/dog11.jpg",
+      image: "https://www.animaleamico.com/public/image/photo_an/506771/2150439/FT_146831911.jpg",
       nameImage: "dog11.jpg",
       name: "Rex",
-      age: "6 anni",
+      age: "6 mesi",
       city: "Milano",
       description: "Un cane fedele e coraggioso.",
       razza: "Dobermann",
@@ -109,7 +109,7 @@ const otherPets = [
       }
     },
     {
-      image: "https://www.petslover.it/wp-content/uploads/2023/12/cat10.jpg",
+      image: "https://assets.annuncianimali.it/image/38dfcf3d-e144-4da3-aa64-d1a33a007cec/image_wm/image.webp",
       nameImage: "cat10.jpg",
       name: "Lily",
       age: "5 anni",
@@ -124,7 +124,7 @@ const otherPets = [
       }
     },
     {
-        image: "https://www.amicianimali.it/wp-content/uploads/2023/06/dog12.jpg",
+        image: "https://lh6.googleusercontent.com/proxy/0E6FKW5DT7DrExG7Phdu9RUqNjoM4ZDtiIFkTMAHeOcDbctJeIz-_9OueLvEy6uXigP9LgyH7VDZ8DAkiJiuiG6nQEABG7pB7BJV43sQ1FQ",
         nameImage: "dog12.jpg",
         name: "Buddy",
         age: "3 anni",
@@ -140,7 +140,7 @@ const otherPets = [
         }
       },
       {
-        image: "https://www.gattomiao.it/wp-content/uploads/2023/07/cat11.jpg",
+        image: "https://manualstech.ams3.cdn.digitaloceanspaces.com/images/adottame/1695921549-2023-09-28-051909-WhatsApp%20Image%202023-09-12%20at%2011.56.39%20(2).jpeg",
         nameImage: "cat11.jpg",
         name: "Milo",
         age: "2 anni",
@@ -155,7 +155,7 @@ const otherPets = [
         }
       },
       {
-        image: "https://www.caneamico.it/wp-content/uploads/2023/08/dog13.jpg",
+        image: "https://i.pinimg.com/originals/5d/b7/d4/5db7d4d2435015f14abdf5f903106079.jpg",
         nameImage: "dog13.jpg",
         name: "Charlie",
         age: "1 anno",

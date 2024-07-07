@@ -1,10 +1,10 @@
 .containerAnnunci {
   display: flex;
-  min-width: 100%;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   background-color: #7b2cbf;
-  min-height: 100vh;
+
 }
 
 .navAnnunci {
@@ -81,6 +81,7 @@
   padding-top: 100px;
   max-width: 1200px;
   z-index: 1;
+  padding-bottom: 100px;
 }
 .containerOtherCard {
   display: flex;
@@ -127,6 +128,7 @@
 .immaginiPet {
   width: 250px;
   height: 250px;
+  object-fit:cover;
 }
 
 .scritte {
@@ -150,6 +152,9 @@
 .cuoreAnnunci :hover {
   fill: #7b2cbf;
 }
+.cuoreAnnunci:checked  {
+  fill: #7b2cbf;
+}
 .iconeContatti :hover {
   cursor: pointer;
 }
@@ -161,7 +166,8 @@
   padding: 50px;
 }
 
-@media (max-width: 1025px) {
+
+ @media (max-width: 1025px) {
   .navAnnunci {
     width: 90%;
   }
@@ -177,12 +183,16 @@
 }
 
 @media (max-width: 769px) {
+  
   .navAnnunci {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    height: auto;
+    padding: 10px;
+    z-index: 1;
   }
 
   .logoNav {
@@ -205,32 +215,35 @@
 }
 
 @media (max-width: 480px) {
-  .containerAnnunci {
-    padding: 10px;
-  }
-
+  
   .navAnnunci {
-    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+    height: auto;
+    padding-bottom:30px;
+    z-index: 1;
+    
   }
 
   .logoNav {
-    width: 120px;
+    width: 150px;
   }
 
-  .selectAnnunci,
-  .formAnnunci {
-    font-size: 14px;
-  }
-
-  .containerOtherCard {
-    gap: 10px;
+  .containerAnnunci {
     padding: 20px;
   }
 
-  .immaginiPet {
-    width: 150px;
-    height: 150px;
+  .otherCard {
+    width:400px ;
+    gap: 50px;
+    padding-top: 50px;
+  }
+
+  .righeContatti {
+    padding: 20px;
+    height: auto;
   }
 }

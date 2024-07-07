@@ -14,6 +14,10 @@ function OtherSectionCard() {
   const [animalNotFound, setAnimalNotFound] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     setOtherPets(otherPetsData);
     setFilteredPets(otherPetsData);
   }, []);
@@ -57,11 +61,12 @@ function OtherSectionCard() {
 
   return (
     <div className="containerAnnunci">
-      <FormBackground />
+      <FormBackground/>
       <nav className="navAnnunci">
         <div className="logoNav">
           <img className="logoNav" src={logoImage} alt="FurFind Logo" />
         </div>
+        
         <div className="contSelect">
           <div className="textSelect">Animale:</div>
           <select
@@ -196,7 +201,7 @@ function OtherSectionCard() {
                       />
                     </svg>
                     <svg
-                      className="iconAnnunci"
+                      className="iconAnnunci whatsapp"
                       width="30px"
                       height="30px"
                       fill="#7b2cbf"
