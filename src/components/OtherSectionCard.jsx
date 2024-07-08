@@ -3,6 +3,7 @@ import "../css/OtherSectionCard.css";
 import logoImage from "../assets/logo-senza-background.png";
 import otherPetsData from "../pets/otherPets";
 import FormBackground from "./FormBackground";
+import useWishlist from "../pets/useWishlist";
 
 function OtherSectionCard() {
   const [otherPets, setOtherPets] = useState([]);
@@ -29,6 +30,8 @@ function OtherSectionCard() {
   const handleBreedInputChange = (event) => {
     setBreedInput(event.target.value);
   };
+
+  const { isWish, handleWishlist } = useWishlist();
 
   const handleCityInputChange = (event) => {
     setCityInput(event.target.value);
@@ -115,7 +118,8 @@ function OtherSectionCard() {
         {filteredPets.map(
           (
             { image, name, age, city, description, razza, nameImage, owner },
-            index
+            index,
+            id
           ) => (
             <div key={index}>
               <div className="containerOtherCard">
@@ -184,8 +188,11 @@ function OtherSectionCard() {
                       width="30px"
                       height="30px"
                       viewBox="0 0 24 24"
-                      fill="none"
+                      fill={isWish(index) ? "#7b2cbf" : "none"}
                       xmlns="http://www.w3.org/2000/svg"
+                      onClick={() => {
+                        handleWishlist(index);
+                      }}
                     >
                       <path
                         d="M15.7 4C18.87 4 21 6.98 21 9.76C21 15.39 12.16 20 12 20C11.84 20 3 15.39 3 9.76C3 6.98 5.13 4 8.3 4C10.12 4 11.31 4.91 12 5.71C12.69 4.91 13.88 4 15.7 4Z"

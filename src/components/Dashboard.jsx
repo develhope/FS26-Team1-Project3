@@ -1,13 +1,32 @@
+import { useEffect, useState } from "react";
 import "../css/dashboard.css";
+import otherPets from "../pets/otherPets";
+import useWishlist from "../pets/useWishlist";
+import OtherSectionCard from "./OtherSectionCard";
 
 export default function Dashboard() {
+  const { wishIds, handleWishlist } = useWishlist();
+  const [wishlistCards, setWishlistCards] = useState([]);
+
+  useEffect(() => {
+    const filteredCards = otherPets.filter((pet) =>
+      wishIds.includes(pet.index)
+    );
+    setWishlistCards(filteredCards);
+  }, [wishIds]);
+
   return (
     <div className="dashboard-container">
       <div className="dashboard-menu">
         <div className="user-profile">
-          <div className="user-propic"></div>
-          <div className="username">Angelo Gavini</div>
-          <div className="user-phone">3791515795</div>
+          <div className="user-propic">
+            <img
+              src="/src/assets/62eafc94a91e094a75ffa8dd_Women and man looking at tablet (3)-p-3200.jpg"
+              alt="propic"
+            />
+          </div>
+          <div className="username">Giuseppe Vaccaro</div>
+          <div className="user-phone">3792315795</div>
         </div>
         <ul className="menu-list">
           <li>
@@ -143,7 +162,15 @@ export default function Dashboard() {
           </div>
         </div>
         <div className="wishlist-navbar"></div>
-        <div className="wishlist">{/* <Wishlist /> */}</div>
+        <div className="wishlist">
+          {wishlistCards.length > 0 ? (
+            wishlistCards.map((pet) => (
+              <OtherSectionCard key={pet.id} pet={pet} isWish={true} />
+            ))
+          ) : (
+            <p>Non hai nessun animale nei Preferiti.</p>
+          )}
+        </div>
       </div>
     </div>
   );
