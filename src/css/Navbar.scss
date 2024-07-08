@@ -135,7 +135,7 @@ input:hover {
   animation: 600ms linear forwards;
   cursor: pointer;
 }
- /*pushing a hamburger menu into a pillow texture like background*/
+/*pushing a hamburger menu into a pillow texture like background*/
 
 .menuButton {
   display: none;
@@ -149,7 +149,7 @@ input:hover {
   border-radius: 0.5em;
   background: #f8f9fa;
   border: 1px solid transparent;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .menuButton:hover {
@@ -159,11 +159,12 @@ input:hover {
 
 .menuButton:active {
   color: #666;
-  box-shadow: 6px 6px 12px #3a3a3a,
-             -6px -6px 12px #000000;
+  box-shadow:
+    6px 6px 12px #3a3a3a,
+    -6px -6px 12px #000000;
 }
 
-input[type = "checkbox"] {
+input[type="checkbox"] {
   -webkit-appearance: none;
   display: none;
   visibility: hidden;
@@ -175,6 +176,46 @@ input[type = "checkbox"] {
   background: #7b2cbf;
   border-radius: 100px;
   transition: 0.3s ease;
+}
+
+.dropdowncontent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 480px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 600px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.dropdowncontent a {
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.dropdowncontent li button {
+  cursor: pointer;
+  border: none;
+}
+
+.dropdowncontent ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  list-style-type: none;
+}
+
+.dropdowncontent:hover {
+  outline: none;
+  border-color: #7b2cbf;
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
 }
 
 // input[type]:checked ~ span.top {
@@ -193,83 +234,117 @@ input[type = "checkbox"] {
 //   opacity: 0;
 // }
 
-
- 
 @media (max-width: 768px) {
-  .Navbar{
-      display:none;
+  .Navbar {
+    display: none;
   }
 
-  .menuButton{
+  .menuButton {
     display: flex;
     margin-bottom: 200px;
     margin-top: 30px;
     margin-right: 520px;
   }
+  .icon-group {
+    height: 36px;
+    width: 36px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 4px;
+    padding: 2px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 90px;
+  }
+
+  .input {
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: 0.3s ease;
+  }
+
+  .input::placeholder {
+  }
+
+  .input:focus,
+  input:hover {
+  }
+
+  .icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+  }
+
+  .access-icon {
+    height: 36px;
+    aspect-ratio: 1 / 1;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .icon-group:hover,
+  .icon-group:focus-visible {
+    width: 192px;
+    background-color: var(--color-mid);
+    transition: none;
+  }
+  .icon-group:focus-visible {
+    outline: 1px solid var(--color-mid);
+    outline-offset: 4px;
+  }
+  .icon-group:active {
+    opacity: 0.9;
+  }
+  .icon-group::after {
+    content: attr(tooltip);
+    margin-left: 12px;
+    animation: none;
+  }
 }
 
 @media (min-width: 350px) and (max-width: 654px) {
-  .Navbar{
-      display:none;
+  .Navbar {
+    display: none;
   }
 
-  .menuButton{
+  .menuButton {
     display: flex;
     margin-bottom: 200px;
     margin-top: 30px;
     margin-right: 380px;
   }
+
+  .dropdowncontent {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 90px;
+    margin-left: 280px;
+    width: 200px;
+  }
 }
-
- .dropdowncontent {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 12px;
-  width: 420px;
-  padding: 10px;
-  background-color: white;
-  border-radius: 10px;
-  margin-left: 500px;
-  margin-bottom: 14px;
-  text-align: center;
- }
-
- .dropdowncontent a {
-  text-decoration: none;
-  cursor: pointer;
-  margin-top: 8px;
- }
-
- .dropdowncontent li button {
-  cursor: pointer;
-  border: none;
- }
-
- .dropdowncontent ul {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  list-style-type: none;
- }
-
- .dropdowncontent:hover {
-  outline: none;
-  border-color: #7b2cbf;
-  background-color: #fff;
-  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
- }
-
-
-
-
-
-
-
- 
- 
- 
- 
 
 @keyframes fadeIn {
   0% {
