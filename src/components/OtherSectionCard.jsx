@@ -70,7 +70,7 @@ function OtherSectionCard() {
         </div>
         
         <div className="contSelect">
-          <div className="textSelect">Animale:</div>
+          <div className="textSelect"></div>
           <select
             className="selectAnnunci"
             value={animalType}
@@ -82,7 +82,7 @@ function OtherSectionCard() {
           </select>
         </div>
         <div className="contSelect">
-          <div className="textSelect">Taglia:</div>
+          <div className="textSelect"></div>
           <select
             className="selectAnnunci"
             value={animalSize}
