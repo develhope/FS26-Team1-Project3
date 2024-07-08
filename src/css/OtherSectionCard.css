@@ -4,7 +4,6 @@
   flex-direction: column;
   align-items: center;
   background-color: #7b2cbf;
-
 }
 
 .navAnnunci {
@@ -19,6 +18,7 @@
   background-color: #f8f9fa;
   border-radius: 20px;
   gap: 20px;
+  padding: 20px;
 }
 .logoNav {
   width: 230px;
@@ -128,7 +128,7 @@
 .immaginiPet {
   width: 250px;
   height: 250px;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 .scritte {
@@ -152,7 +152,7 @@
 .cuoreAnnunci :hover {
   fill: #7b2cbf;
 }
-.cuoreAnnunci:checked  {
+.cuoreAnnunci:checked {
   fill: #7b2cbf;
 }
 .iconeContatti :hover {
@@ -166,8 +166,7 @@
   padding: 50px;
 }
 
-
- @media (max-width: 1025px) {
+@media (max-width: 1025px) {
   .navAnnunci {
     width: 90%;
   }
@@ -183,7 +182,6 @@
 }
 
 @media (max-width: 769px) {
-  
   .navAnnunci {
     display: flex;
     flex-wrap: wrap;
@@ -215,7 +213,6 @@
 }
 
 @media (max-width: 480px) {
-  
   .navAnnunci {
     display: flex;
     flex-wrap: wrap;
@@ -223,9 +220,8 @@
     align-items: center;
     gap: 20px;
     height: auto;
-    padding-bottom:30px;
+    padding-bottom: 30px;
     z-index: 1;
-    
   }
 
   .logoNav {
@@ -237,7 +233,7 @@
   }
 
   .otherCard {
-    width:400px ;
+    width: 400px;
     gap: 50px;
     padding-top: 50px;
   }
