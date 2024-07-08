@@ -157,21 +157,21 @@ input[type = "checkbox"] {
   transition: 0.3s ease;
 }
 
-input[type]:checked ~ span.top {
-  transform: translateY(290%)rotate(45deg);
-  width: 40px;
-}
+// input[type]:checked ~ span.top {
+//   transform: translateY(290%)rotate(45deg);
+//   width: 40px;
+// }
 
-input[type]:checked ~ span.bot {
-  transform: translateY(-270%) rotate(-45deg);
-  width: 40px;
-  box-shadow: 0 0 10px #495057;
-}
+// input[type]:checked ~ span.bot {
+//   transform: translateY(-270%) rotate(-45deg);
+//   width: 40px;
+//   box-shadow: 0 0 10px #495057;
+// }
 
-input[type]:checked ~ span.mid {
-  transform: translateX(-20px);
-  opacity: 0;
-}
+// input[type]:checked ~ span.mid {
+//   transform: translateX(-20px);
+//   opacity: 0;
+// }
 
 
  
@@ -205,18 +205,32 @@ input[type]:checked ~ span.mid {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 10px;
-  width: 300px;
+  gap: 12px;
+  width: 420px;
   padding: 10px;
   background-color: white;
   border-radius: 10px;
   margin-left: 500px;
   margin-bottom: 14px;
+  text-align: center;
  }
 
  .dropdowncontent a {
   text-decoration: none;
   cursor: pointer;
+  margin-top: 8px;
+ }
+
+ .dropdowncontent li button {
+  cursor: pointer;
+  border: none;
+ }
+
+ .dropdowncontent ul {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  list-style-type: none;
  }
 
  .dropdowncontent:hover {
