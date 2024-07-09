@@ -4,8 +4,11 @@ import passport from 'passport';
 import flash from 'express-flash';
 import session from 'express-session';
 import dotenv from 'dotenv';
-import initializePassport from './passport.config.js';
+import initializePassport from './passport.config.mjs';
 import { createEngine } from 'express-react-views';
+import { mongoose, User } from './mongo.mjs';
+import cors from 'cors';
+import './passport.config.mjs';
 
 if (process.env.NODE_ENV !== 'production') {
     dotenv.config();
@@ -13,15 +16,21 @@ if (process.env.NODE_ENV !== 'production') {
 
 const app = express();
 
-const users = [];
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+}));
 
-initializePassport(passport, username => {
-    return users.find(user => user.username === username);
+initializePassport(passport, async email => {
+    return await User.findOne({ email });
+}, async id => {
+    return await User.findById(id);
 });
 
 app.set('view engine', 'jsx');
 app.engine('jsx', createEngine());
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(flash());
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -52,17 +61,18 @@ app.get('/iscriviti', (req, res) => {
 app.post('/iscriviti', async (req, res) => {
     try {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
-        users.push({
-            id: Date.now().toString(),
+        const user = new User({
             name: req.body.name,
             email: req.body.email,
+            phone: req.body.phone,
             password: hashedPassword,
         });
-        res.redirect('/login');
+        await user.save();
+        res.status(200).redirect('/login');
     } catch (error) {
-        res.redirect('/iscriviti');
+        console.error("Errore durante la registrazione", error);
+        res.status(500).redirect('/iscriviti');
     }
-    console.log(users);
 });
 
 app.listen(3000, () => {
