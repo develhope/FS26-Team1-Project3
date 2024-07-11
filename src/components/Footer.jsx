@@ -11,6 +11,9 @@ function Footer() {
   const handleHomepage = () => {
     navigate("/");
   };
+  const handlePrivacyLink = () => {
+    navigate("/privacy");
+  };
 
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
@@ -47,7 +50,7 @@ function Footer() {
                 )}
               </li>
               <li>
-                <Link to='/privacy'>Politica sulla privacy</Link>
+                <Link to='/privacy' onClick={handlePrivacyLink}>Politica sulla privacy</Link>
               </li>
             </ul>
           </div>

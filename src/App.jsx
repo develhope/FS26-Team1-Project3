@@ -6,6 +6,7 @@ import NewAnnounce from "./components/NewAnnounce.jsx";
 import About from "./components/About.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import OtherSectionCard from "./components/OtherSectionCard.jsx";
+import Privacy from "./components/Privacy.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/annunci" element={<OtherSectionCard />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </Router>
   );
