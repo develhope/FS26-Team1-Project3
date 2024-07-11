@@ -3,27 +3,31 @@ import FormBackground from "./FormBackground";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
+import Navbar from "./Navbar";
 
 export default function SignUpForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   async function submit(e) {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:3000/iscriviti', {
-        name, email, phone, password
+      const response = await axios.post("http://localhost:3000/iscriviti", {
+        name,
+        email,
+        phone,
+        password,
       });
       if (response.status === 200) {
-        navigate('/login');
+        navigate("/login");
       }
     } catch (error) {
-      setError('Registrazione fallita. Riprova.');
+      setError("Registrazione fallita. Riprova.");
       console.error(error);
     }
   }
@@ -31,6 +35,9 @@ export default function SignUpForm() {
   return (
     <div className="form-container">
       <FormBackground />
+      <div className="navbarcontainer">
+        <Navbar />
+      </div>
       <div className="form_area">
         <p className="title">ISCRIVITI</p>
         <form onSubmit={submit}>
@@ -87,10 +94,12 @@ export default function SignUpForm() {
             />
           </div>
           <div className="btn-area">
-            <button type="submit" className="btn">ISCRIVITI</button>
+            <button type="submit" className="btn">
+              ISCRIVITI
+            </button>
             <p>
               Hai già un account?{" "}
-              <Link to='/login' className="link">
+              <Link to="/login" className="link">
                 Entra qua!
               </Link>
             </p>

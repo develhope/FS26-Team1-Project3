@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "../css/OtherSectionCard.css";
 import logoImage from "../assets/logo-senza-background.png";
 import otherPetsData from "../pets/otherPets";
@@ -14,6 +15,12 @@ function OtherSectionCard() {
   const [breedInput, setBreedInput] = useState("");
   const [cityInput, setCityInput] = useState("");
   const [animalNotFound, setAnimalNotFound] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleHomepageNavigate = () => {
+    navigate("/");
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -115,6 +122,9 @@ function OtherSectionCard() {
               onChange={handleCityInputChange}
             />
           </div>
+          <Link className="homelink" to="/" onClick={handleHomepageNavigate}>
+            Home
+          </Link>
         </nav>
 
         {filteredPets.length === 0 && animalNotFound && (

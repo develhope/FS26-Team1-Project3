@@ -5,6 +5,11 @@ import React, { useState } from "react";
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
+  const handleContactClick = () => {
+    setIsDropdownVisible((prevState) => !prevState); 
+  };
 
   const navigate = useNavigate();
   const handleNavigate = () => {
@@ -20,6 +25,10 @@ export default function Navbar() {
 
   const handleAboutButton = () => {
     navigate("/about");
+  };
+
+  const handleHomepageButton = () => {
+    navigate("/");
   };
 
   const toggleDropdown = () => {
@@ -40,12 +49,12 @@ export default function Navbar() {
         <span className="mid"></span>
         <span className="bot"></span>
         {isDropdownOpen && <div className="dropdowncontent">
-         <a href="#">Home</a> 
+         <Link to='/' onClick={handleHomepageButton}>Home</Link> 
          <a href="#">Chi siamo</a>
          <a href="#">Contatti</a>
          <ul>
          <li className="icon-group">
-            <Link onClick={handleNavigate} className="access-icon">
+            <Link to='/iscriviti' onClick={handleNavigate} className="access-icon">
               <svg
                 fill="#7b2cbf"
                 width="35px"
@@ -171,16 +180,23 @@ export default function Navbar() {
           <img className="logo-FurFind" src={logoImage} alt="FurFind Logo" />
         </div>
         <ul className="navbar-links">
+          <div className="linksdeilinks">
           <li>
-            <a href="#home">Home</a>
+            <Link to='/' onClick={handleHomepageButton}>Home</Link>
           </li>
           <li>
             <Link to="/about" onClick={handleAboutButton}>
               Chi siamo
             </Link>
           </li>
-          <li>
+          <li onClick={handleContactClick}>
             <a href="#contact">Contatti</a>
+            {isDropdownVisible && (
+                  <div className="dropdown-menu">
+                    <p>Telefono: +39 123 456 7890</p>
+                    <p>Email: furfind@gmail.com</p>
+                  </div>
+                )}
           </li>
           <li>
             <div className="group">
@@ -192,6 +208,8 @@ export default function Navbar() {
               <input placeholder="Cerca" type="search" className="input" />
             </div>
           </li>
+          </div>
+          <div className="containericons">
           <li
           className="icon-group"
           tooltip="Iscriviti a FurFind"
@@ -326,6 +344,7 @@ export default function Navbar() {
               </svg>
             </button>
           </li>
+          </div>
           <li></li>
         </ul>
       </nav>

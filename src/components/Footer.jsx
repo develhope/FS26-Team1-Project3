@@ -8,6 +8,9 @@ function Footer() {
   const handleAboutButton = () => {
     navigate("/about");
   };
+  const handleHomepage = () => {
+    navigate("/");
+  };
 
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
@@ -26,8 +29,8 @@ function Footer() {
           </div>
           <div className="footer-list">
             <ul>
-              <li id="home">
-                <a href="./">Home</a>
+              <li>
+                <Link to='/' onClick={handleHomepage}>Home</Link>
               </li>
               <li id="about">
                 <Link to="/about" onClick={handleAboutButton}>

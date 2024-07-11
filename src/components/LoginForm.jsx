@@ -3,6 +3,7 @@ import FormBackground from "./FormBackground";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
+import Navbar from "./Navbar";
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -32,6 +33,9 @@ export default function LoginForm() {
   return (
     <div className="form-container">
       <FormBackground />
+      <div className="navbarcontainer">
+        <Navbar/>
+      </div>
       <div className="form_area">
         <p className="title">ACCEDI</p>
         <form onSubmit={submit}>
