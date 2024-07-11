@@ -68,4 +68,25 @@
     fill: #7b2cbf;
   }
 
+
+  @media (max-width: 768px) {
+   .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 30px;
+    padding: 10px;
+    z-index: 1;
+    max-width: fit-content;
+   }
+
+   .about-text-container {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 0;
+
+   }
+  }
   
