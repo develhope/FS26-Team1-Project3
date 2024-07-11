@@ -34,9 +34,6 @@ function Footer() {
                   Chi siamo
                 </Link>
               </li>
-              <li id="services">
-                <a>Servizi</a>
-              </li>
               <li id="contact" onClick={handleContactClick}>
                 <a>Contatti</a>
                 {isDropdownVisible && (
@@ -47,7 +44,7 @@ function Footer() {
                 )}
               </li>
               <li>
-                <a>Politica sulla privacy</a>
+                <Link to='/privacy'>Politica sulla privacy</Link>
               </li>
             </ul>
           </div>

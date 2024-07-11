@@ -41,8 +41,7 @@ export default function Navbar() {
         <span className="bot"></span>
         {isDropdownOpen && <div className="dropdowncontent">
          <a href="#">Home</a> 
-         <a href="#">Chi siamo</a> 
-         <a href="#">Servizi</a>
+         <a href="#">Chi siamo</a>
          <a href="#">Contatti</a>
          <ul>
          <li className="icon-group">
@@ -179,9 +178,6 @@ export default function Navbar() {
             <Link to="/about" onClick={handleAboutButton}>
               Chi siamo
             </Link>
-          </li>
-          <li>
-            <a href="#services">Servizi</a>
           </li>
           <li>
             <a href="#contact">Contatti</a>

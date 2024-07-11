@@ -1,6 +1,10 @@
 import "../css/HeroCaption.scss";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroCaption() {
+  const navigate = useNavigate();
+  const handleNavigateAnnunci= () => navigate("/annunci")
+
   return (
     <div className="Captioncontent">
       <h2>
@@ -15,8 +19,7 @@ export default function HeroCaption() {
         Entra nel nostro mondo e scopri il potere trasformante dell'amore.
       </p>
       <div className="buttons">
-        <button className="btn-primary">Prova il nostro servizio</button>
-        <button className="btn-primary">Scopri i canili vicino a te</button>
+        <button className="btn-primary" onClick={handleNavigateAnnunci}>Guarda i nostri annunci</button>
       </div>
     </div>
   );
