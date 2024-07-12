@@ -1,92 +1,128 @@
 .about-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    gap: 40px;
-    background-color: #7b2cbf;
-    overflow: hidden;
-    max-height: 100vh;
-    padding: 50px;
-    position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 40px;
+  background-color: #7b2cbf;
+  overflow: hidden;
+  max-height: 100vh;
+  padding: 50px;
+  position: absolute;
 }
 
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
 }
 
-
-.about-text-container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 1200px;
-    height: 600px;
-    padding: 20px;
-    color: #7b2cbf;
-    font-size: 20px;
-    font-weight: bold;    
-    background-color: #f8f9fa;
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    gap: 10px;
-    z-index: 1;
+.about-text-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 70px;
+  width: 1200px;
+  color: #7b2cbf;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  gap: 10px;
+  z-index: 1;
 }
 
-.about-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.about-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.about-title{
-    color: #240046;
-   
+.about-title {
+  color: #240046;
 }
 
 .align-text {
-    text-align: center;
+  text-align: center;
 }
 
-.zampettando{
+.zampettando {
+  display: flex;
+  gap: 20px;
+  align-self: center;
+}
+
+.mission-zampetta2 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 25px;
+  height: 25px;
+  fill: #7b2cbf;
+}
+
+@media (max-width: 1025px) {
+  .navbar {
     display: flex;
-    gap: 20px;
-    align-self: center;
-  }
-  
-  .mission-zampetta2 {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 25px;
-    height: 25px;
-    fill: #7b2cbf;
+    margin: 200px;
+    overflow: scroll;
   }
 
+  .about-container {
+    overflow: scroll;
+  }
 
-  @media (max-width: 768px) {
-   .navbar {
+  .about-text-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    height: 30px;
-    padding: 10px;
-    z-index: 1;
-    max-width: fit-content;
-   }
-
-   .about-text-container {
-    display: flex;
-    flex-wrap: wrap;
-    z-index: 0;
-
-   }
+    width: 100%;
   }
-  
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    margin: 620px;
+    overflow: scroll;
+  }
+
+  .about-container {
+    overflow: scroll;
+  }
+
+  .about-text-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 612px) {
+  .navbar {
+    margin: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    display: flex;
+    margin: 620px;
+    overflow: scroll;
+  }
+
+  .about-container {
+    overflow: scroll;
+  }
+
+  .about-text-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    width: 100%;
+  }
+}

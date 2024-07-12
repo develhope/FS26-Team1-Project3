@@ -9,11 +9,12 @@ function About() {
     navigate("/HomePage.jsx");
   };
   return (
+    <>
     <div className="about-container">
-      <FormBackground />
       <div className="navbar">
         <Navbar />
       </div>
+      <FormBackground />
       <div className="about-text-container">
         <h2 className="about-title">Chi siamo?</h2>
         <p className="about-text">
@@ -80,6 +81,7 @@ function About() {
         </div>
       </div>
     </div>
+  </>
   );
 }
 
