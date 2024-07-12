@@ -10,13 +10,14 @@
   max-height: 100vh;
   padding: 50px;
   position: absolute;
+  overflow: scroll;
 }
 
 .navbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 40px;
+  margin: 70px;
 }
 
 .about-text-container {
