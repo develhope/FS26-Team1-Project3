@@ -1,10 +1,14 @@
 import "../css/form.css";
 import FormBackground from "./FormBackground";
+import Navbar from "./Navbar";
 
 export default function LoginForm() {
   return (
     <div className="form-container">
       <FormBackground />
+      <div className="navbarcontainer">
+        <Navbar/>
+      </div>
       <div className="form_area">
         <p className="title">AGGIUNGI ANNUNCIO</p>
         <form action="">

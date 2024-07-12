@@ -8,6 +8,12 @@ function Footer() {
   const handleAboutButton = () => {
     navigate("/about");
   };
+  const handleHomepage = () => {
+    navigate("/");
+  };
+  const handlePrivacyLink = () => {
+    navigate("/privacy");
+  };
 
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
@@ -26,16 +32,13 @@ function Footer() {
           </div>
           <div className="footer-list">
             <ul>
-              <li id="home">
-                <a href="./">Home</a>
+              <li>
+                <Link to='/' onClick={handleHomepage}>Home</Link>
               </li>
               <li id="about">
                 <Link to="/about" onClick={handleAboutButton}>
                   Chi siamo
                 </Link>
-              </li>
-              <li id="services">
-                <a>Servizi</a>
               </li>
               <li id="contact" onClick={handleContactClick}>
                 <a>Contatti</a>
@@ -47,7 +50,7 @@ function Footer() {
                 )}
               </li>
               <li>
-                <a>Politica sulla privacy</a>
+                <Link to='/privacy' onClick={handlePrivacyLink}>Politica sulla privacy</Link>
               </li>
             </ul>
           </div>

@@ -1,16 +1,20 @@
 import { Link, useNavigate } from "react-router-dom";
 import "../css/about.css";
 import FormBackground from "./FormBackground";
+import Navbar from "./Navbar";
 
 function About() {
-const navigate = useNavigate();
-const handleHomeNavigate= ()=>{
-  navigate('/HomePage.jsx')
-}
+  const navigate = useNavigate();
+  const handleHomeNavigate = () => {
+    navigate("/HomePage.jsx");
+  };
   return (
-
+    <>
     <div className="about-container">
-      <FormBackground/>
+      <div className="navbar">
+        <Navbar />
+      </div>
+      <FormBackground />
       <div className="about-text-container">
         <h2 className="about-title">Chi siamo?</h2>
         <p className="about-text">
@@ -76,10 +80,8 @@ const handleHomeNavigate= ()=>{
           </svg>
         </div>
       </div>
-      <div className="go-home">
-        <Link to='/' onClick={handleHomeNavigate}>Home</Link>
-      </div>
     </div>
+  </>
   );
 }
 

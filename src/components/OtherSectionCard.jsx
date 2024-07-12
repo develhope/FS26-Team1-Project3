@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "../css/OtherSectionCard.css";
 import logoImage from "../assets/logo-senza-background.png";
 import otherPetsData from "../pets/otherPets";
@@ -13,6 +14,12 @@ function OtherSectionCard() {
   const [breedInput, setBreedInput] = useState("");
   const [cityInput, setCityInput] = useState("");
   const [animalNotFound, setAnimalNotFound] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleHomepageNavigate = () => {
+    navigate("/");
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -62,57 +69,60 @@ function OtherSectionCard() {
 
   return (
     <div>
-    <div className="containerAnnunci">
-      <FormBackground/>
-      <nav className="navAnnunci">
-        <div className="logoNav">
-          <img className="logoNav" src={logoImage} alt="FurFind Logo" />
-        </div>
-        
-        <div className="contSelect">
-          <div className="textSelect"></div>
-          <select
-            className="selectAnnunci"
-            value={animalType}
-            onChange={handleAnimalTypeChange}
-          >
-            <option value="">Tutti gli animali</option>
-            <option value="Cane">Cane</option>
-            <option value="Gatto">Gatto</option>
-          </select>
-        </div>
-        <div className="contSelect">
-          <div className="textSelect"></div>
-          <select
-            className="selectAnnunci"
-            value={animalSize}
-            onChange={handleAnimalSizeChange}
-          >
-            <option value="">Tutte le taglie</option>
-            <option value="Taglia piccola">Taglia piccola</option>
-            <option value="Taglia media">Taglia media</option>
-            <option value="Taglia grande">Taglia grande</option>
-          </select>
-        </div>
-        <div>
-          <input
-            className="formAnnunci"
-            type="text"
-            placeholder="Inserisci Razza"
-            value={breedInput}
-            onChange={handleBreedInputChange}
-          />
-        </div>
-        <div>
-          <input
-            className="formAnnunci"
-            type="text"
-            placeholder="Inserisci città"
-            value={cityInput}
-            onChange={handleCityInputChange}
-          />
-        </div>
-      </nav>
+      <div className="containerAnnunci">
+        <FormBackground />
+        <nav className="navAnnunci">
+          <div className="logoNav">
+            <img className="logoNav" src={logoImage} alt="FurFind Logo" />
+          </div>
+
+          <div className="contSelect">
+            <div className="textSelect"></div>
+            <select
+              className="selectAnnunci"
+              value={animalType}
+              onChange={handleAnimalTypeChange}
+            >
+              <option value="">Tutti gli animali</option>
+              <option value="Cane">Cane</option>
+              <option value="Gatto">Gatto</option>
+            </select>
+          </div>
+          <div className="contSelect">
+            <div className="textSelect"></div>
+            <select
+              className="selectAnnunci"
+              value={animalSize}
+              onChange={handleAnimalSizeChange}
+            >
+              <option value="">Tutte le taglie</option>
+              <option value="Taglia piccola">Taglia piccola</option>
+              <option value="Taglia media">Taglia media</option>
+              <option value="Taglia grande">Taglia grande</option>
+            </select>
+          </div>
+          <div>
+            <input
+              className="formAnnunci"
+              type="text"
+              placeholder="Inserisci Razza"
+              value={breedInput}
+              onChange={handleBreedInputChange}
+            />
+          </div>
+          <div>
+            <input
+              className="formAnnunci"
+              type="text"
+              placeholder="Inserisci città"
+              value={cityInput}
+              onChange={handleCityInputChange}
+            />
+          </div>
+          <Link className="homelink" to="/" onClick={handleHomepageNavigate}>
+            Home
+          </Link>
+        </nav>
 
       {filteredPets.length === 0 && animalNotFound && (
         <div className="animaleNonTrovato">Animale non trovato!</div>

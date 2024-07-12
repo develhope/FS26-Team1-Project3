@@ -166,6 +166,14 @@
   padding: 50px;
 }
 
+.homelink {
+  text-decoration: none;
+}
+
+.homelink:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 1025px) {
   .navAnnunci {
     width: 90%;

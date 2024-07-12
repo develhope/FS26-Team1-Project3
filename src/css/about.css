@@ -1,84 +1,128 @@
 .about-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    min-height: 100vh;
-    gap: 20px;
-    background-color: #7b2cbf;
-    overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 40px;
+  background-color: #7b2cbf;
+  overflow: hidden;
+  max-height: 100vh;
+  padding: 50px;
+  position: absolute;
 }
 
-
-
-.about-text-container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 1200px;
-    min-height: 600px;
-    padding: 20px;
-    color: #7b2cbf;
-    font-size: 20px;
-    font-weight: bold;    
-    background-color: #f8f9fa;
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    gap: 20px;
-    z-index: 1;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px;
 }
 
-.about-text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.about-text-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 70px;
+  width: 1200px;
+  color: #7b2cbf;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  gap: 10px;
+  z-index: 1;
 }
 
-.about-title{
-    color: #240046;
-   
+.about-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-title {
+  color: #240046;
 }
 
 .align-text {
-    text-align: center;
+  text-align: center;
 }
 
-.zampettando{
-    display: flex;
-    gap: 20px;
-    align-self: center;
-  }
-  
-  .mission-zampetta2 {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 25px;
-    height: 25px;
-    fill: #7b2cbf;
-  }
+.zampettando {
+  display: flex;
+  gap: 20px;
+  align-self: center;
+}
 
- .go-home {
-    display: flex;
-     margin-left: 1000px;
- }
-
-  .go-home a {
-    display: flex;
-    text-decoration: none;
-    color: #f8f9fa;
-  }
-
-  .go-home:hover{
-    text-decoration: underline;
-    color: #f8f9fa;
+.mission-zampetta2 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 25px;
+  height: 25px;
+  fill: #7b2cbf;
 }
 
 @media (max-width: 1025px) {
+  .navbar {
+    display: flex;
+    margin: 200px;
+    overflow: scroll;
+  }
+
+  .about-container {
+    overflow: scroll;
+  }
+
   .about-text-container {
-    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    margin: 620px;
+    overflow: scroll;
+  }
+
+  .about-container {
+    overflow: scroll;
+  }
+
+  .about-text-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 612px) {
+  .navbar {
     margin: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    display: flex;
+    margin: 620px;
+    overflow: scroll;
+  }
+
+  .about-container {
+    overflow: scroll;
+  }
+
+  .about-text-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 0;
+    width: 100%;
   }
 }

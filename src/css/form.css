@@ -6,6 +6,12 @@
   text-align: center;
 }
 
+.navbarcontainer {
+  display: flex;
+  justify-content: center;
+  padding: 70px;
+}
+
 .form-container {
   display: flex;
   align-items: center;
@@ -47,7 +53,7 @@
   color: #240046;
   font-weight: 900;
   font-size: 1.5em;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .sub_title {
@@ -125,6 +131,13 @@
 
 /* Max width 769px */
 @media (max-width: 769px) {
+
+.navbarcontainer {
+  display: flex;
+  margin-top: 230px;
+  overflow: scroll;
+}
+
   .form_area {
     box-shadow: none;
     backdrop-filter: none;
@@ -147,6 +160,13 @@
 
 /* Max width 480px */
 @media (max-width: 480px) {
+  .navbarcontainer {
+    display: flex;
+    margin-top: 150px;
+    overflow: scroll;
+}
+  }
+
   .form_area {
     box-shadow: none;
     backdrop-filter: none;
@@ -168,4 +188,4 @@
   .btn-area {
     margin-top: 15px;
   }
-}
+
