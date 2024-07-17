@@ -21,6 +21,7 @@
     "express-flash": "^0.0.2",
     "express-react-views": "^0.11.0",
     "express-session": "^1.18.0",
+    "helmet": "^7.1.0",
     "mongoose": "^8.5.0",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",

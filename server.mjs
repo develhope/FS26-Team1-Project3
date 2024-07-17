@@ -4,17 +4,39 @@ import passport from 'passport';
 import flash from 'express-flash';
 import session from 'express-session';
 import dotenv from 'dotenv';
+import helmet from "helmet";
 import initializePassport from './passport.config.mjs';
 import { createEngine } from 'express-react-views';
 import { mongoose, User } from './mongo.mjs';
 import cors from 'cors';
 import './passport.config.mjs';
+import path from 'path'
+import { fileURLToPath } from 'url';
 
 if (process.env.NODE_ENV !== 'production') {
     dotenv.config();
 }
 
 const app = express();
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+const viewsPath = path.join(__dirname, 'src');
+
+app.set('views', viewsPath);
+
+app.use(helmet({
+    contentSecurityPolicy: {
+      directives: {
+        "default-src": ["'self'"],
+        "script-src": ["'self'"],
+        "style-src": ["'self'", "https://fonts.googleapis.com"],
+        "font-src": ["'self'", "https://fonts.gstatic.com"],
+        "img-src": ["'self'", "data:"],
+        "connect-src": ["'self'"],
+        "frame-src": ["'none'"]
+      }
+    }
+  }));
 
 app.use(cors({
     origin: 'http://localhost:5173',
@@ -41,11 +63,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/', (req, res) => {
-    res.render('App.jsx');
+    res.render('main');
 });
 
 app.get('/login', (req, res) => {
-    res.render('Login.jsx');
+    res.render('LoginForm');
 });
 
 app.post('/login', passport.authenticate('local', {
@@ -55,7 +77,7 @@ app.post('/login', passport.authenticate('local', {
 }));
 
 app.get('/iscriviti', (req, res) => {
-    res.render('Iscrivitiform.jsx');
+    res.render('SignUpForm');
 });
 
 app.post('/iscriviti', async (req, res) => {

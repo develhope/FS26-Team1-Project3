@@ -7,21 +7,30 @@ import About from "./components/About.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import OtherSectionCard from "./components/OtherSectionCard.jsx";
 import Privacy from "./components/Privacy.jsx";
+import { Helmet } from "react-helmet";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/iscriviti" element={<SignUpForm />} />
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/annuncio" element={<NewAnnounce />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/annunci" element={<OtherSectionCard />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/privacy" element={<Privacy />} />
-      </Routes>
-    </Router>
+    <>
+      <Helmet>
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;"
+        />
+      </Helmet>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/iscriviti" element={<SignUpForm />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/annuncio" element={<NewAnnounce />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/annunci" element={<OtherSectionCard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/privacy" element={<Privacy />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
