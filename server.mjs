@@ -24,6 +24,8 @@ const viewsPath = path.join(__dirname, 'src');
 
 app.set('views', viewsPath);
 
+app.use(express.static(path.join(__dirname, 'dist')));
+
 app.use(helmet({
     contentSecurityPolicy: {
       directives: {
@@ -95,6 +97,10 @@ app.post('/iscriviti', async (req, res) => {
         console.error("Errore durante la registrazione", error);
         res.status(500).redirect('/iscriviti');
     }
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(buildPath, 'index.html'));
 });
 
 app.listen(3000, () => {
