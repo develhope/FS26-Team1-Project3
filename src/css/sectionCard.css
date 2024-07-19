@@ -1,4 +1,3 @@
-
 .book {
   position: relative;
   border-radius: 16px;
@@ -107,6 +106,16 @@
   transform: rotate(30deg);
 }
 
+.heart-btn .iconContatti {
+  position: absolute;
+  background-color: transparent;
+  border-color: transparent;
+  bottom: 0;
+
+  margin: auto;
+  margin-bottom: 10px;
+}
+
 .contatti {
   display: flex;
   justify-content: center;
@@ -180,4 +189,3 @@
   margin: 5px 0;
   font-size: 14px;
 }
-

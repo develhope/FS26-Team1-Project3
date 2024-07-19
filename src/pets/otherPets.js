@@ -1,5 +1,6 @@
 const otherPets = [
   {
+    id: 1,
     image:
       "https://assets.annuncianimali.it/image/5185ed37-18f6-40b3-893b-0230a0f9a52d/image_wm/image.webp",
     nameImage: "dog8.jpg",
@@ -17,6 +18,7 @@ const otherPets = [
     },
   },
   {
+    id: 2,
     image:
       "https://animaliadozionetoscana.wordpress.com/wp-content/uploads/2014/09/2014-08-24-18-41-12.jpg",
     nameImage: "cat7.jpg",
@@ -33,6 +35,7 @@ const otherPets = [
     },
   },
   {
+    id: 3,
     image:
       "https://www.rescuebouledoguefranceseitalia.it/wp-content/uploads/2023/07/12-e1688748715482.jpg",
     nameImage: "dog9.jpg",
@@ -50,6 +53,7 @@ const otherPets = [
     },
   },
   {
+    id: 4,
     image:
       "https://i.pinimg.com/736x/d2/e8/66/d2e866fb22a3705c19dd4ad4b25b2fdc.jpg",
     nameImage: "cat8.jpg",
@@ -66,6 +70,7 @@ const otherPets = [
     },
   },
   {
+    id: 5,
     image:
       "https://manualstech.ams3.cdn.digitaloceanspaces.com/images/adottame/images/613b4cddbcd81_2021-09-10-121733-WhatsApp%20Image%202021-09-10%20at%2013.19.13.thumb.jpeg",
     nameImage: "dog10.jpg",
@@ -83,6 +88,7 @@ const otherPets = [
     },
   },
   {
+    id: 6,
     image:
       "https://citynews-trevisotoday.stgy.ovh/~media/11252408296321/278205968_5705196749494525_7244948194860916275_n-2.jpg",
     nameImage: "cat9.jpg",
@@ -99,6 +105,7 @@ const otherPets = [
     },
   },
   {
+    id: 7,
     image:
       "https://www.animaleamico.com/public/image/photo_an/506771/2150439/FT_146831911.jpg",
     nameImage: "dog11.jpg",
@@ -116,6 +123,7 @@ const otherPets = [
     },
   },
   {
+    id: 8,
     image:
       "https://assets.annuncianimali.it/image/38dfcf3d-e144-4da3-aa64-d1a33a007cec/image_wm/image.webp",
     nameImage: "cat10.jpg",
@@ -132,6 +140,7 @@ const otherPets = [
     },
   },
   {
+    id: 9,
     image:
       "https://lh6.googleusercontent.com/proxy/0E6FKW5DT7DrExG7Phdu9RUqNjoM4ZDtiIFkTMAHeOcDbctJeIz-_9OueLvEy6uXigP9LgyH7VDZ8DAkiJiuiG6nQEABG7pB7BJV43sQ1FQ",
     nameImage: "dog12.jpg",
@@ -149,6 +158,7 @@ const otherPets = [
     },
   },
   {
+    id: 10,
     image:
       "https://manualstech.ams3.cdn.digitaloceanspaces.com/images/adottame/1695921549-2023-09-28-051909-WhatsApp%20Image%202023-09-12%20at%2011.56.39%20(2).jpeg",
     nameImage: "cat11.jpg",
@@ -165,6 +175,7 @@ const otherPets = [
     },
   },
   {
+    id: 11,
     image:
       "https://i.pinimg.com/originals/5d/b7/d4/5db7d4d2435015f14abdf5f903106079.jpg",
     nameImage: "dog13.jpg",

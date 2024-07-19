@@ -1,6 +1,11 @@
 .dashboard-container {
   display: flex;
   flex-direction: row;
+  background-color: #7b2cbf;
+}
+
+.dashboard-content {
+  background-color: #7b2cbf;
 }
 
 .dashboard-menu {
@@ -9,8 +14,14 @@
   width: 20%;
   height: 100vh;
   background-color: #240046;
+  gap: 20px;
   color: #f8f9fa;
   justify-content: space-between;
+  z-index: 3;
+}
+
+.title {
+  color: #ffffff;
 }
 
 .dashboard-menu ul {
@@ -27,6 +38,10 @@
   flex-direction: row;
   align-items: center;
   gap: 10px;
+}
+
+.dashboard-menu li:hover {
+  cursor: pointer;
 }
 
 .dashboard-menu li svg {
@@ -47,6 +62,10 @@
   background-color: #f8f9fa;
 }
 
+.dashboard-content-top {
+  background-color: #7b2cbf;
+}
+
 .user-profile {
   display: flex;
   flex-direction: column;
@@ -54,6 +73,10 @@
   padding: 20px;
   margin: 0;
   gap: 10px;
+}
+
+.user-profile:hover {
+  cursor: pointer;
 }
 
 .search {
@@ -76,4 +99,9 @@
   height: 110px;
   border-radius: 50%;
   overflow: hidden;
+}
+
+.wishlist {
+  padding: 20px;
+  background-color: #7b2cbf;
 }
