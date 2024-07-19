@@ -21,6 +21,7 @@
     "express-flash": "^0.0.2",
     "express-react-views": "^0.11.0",
     "express-session": "^1.18.0",
+    "helmet": "^7.1.0",
     "mongoose": "^8.5.0",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
@@ -29,21 +30,27 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^6.23.1",
     "react-slick": "^0.30.2",
-    "sass": "^1.77.4",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
+    "css-loader": "^7.1.2",
     "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "nodemon": "^3.1.4",
-    "vite": "^5.2.13"
+    "sass": "^1.77.8",
+    "sass-loader": "^14.2.1",
+    "style-loader": "^4.0.0",
+    "vite": "^5.2.13",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
   }
 }
