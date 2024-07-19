@@ -147,3 +147,20 @@ input:hover {
     opacity: 1;
   }
 }
+@media (max-width: 1025px) {
+
+}
+
+@media (max-width: 769px) {
+  
+  .navbar {
+    display: flex;
+   flex-wrap: wrap;
+}
+
+}
+
+@media (max-width: 480px) {
+  
+ 
+}

@@ -5,6 +5,7 @@ import otherPetsData from "../pets/otherPets";
 import FormBackground from "./FormBackground";
 import Footer from "./Footer"
 
+
 function OtherSectionCard() {
   const [otherPets, setOtherPets] = useState([]);
   const [filteredPets, setFilteredPets] = useState([]);
@@ -63,10 +64,12 @@ function OtherSectionCard() {
   return (
     <div>
     <div className="containerAnnunci">
+   
       <FormBackground/>
       <nav className="navAnnunci">
+        
         <div className="logoNav">
-          <img className="logoNav" src={logoImage} alt="FurFind Logo" />
+          <img className="logoNav"  src={logoImage} alt="FurFind Logo" />
         </div>
         
         <div className="contSelect">
