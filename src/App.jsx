@@ -7,16 +7,18 @@ import About from "./components/About.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import OtherSectionCard from "./components/OtherSectionCard.jsx";
 import Privacy from "./components/Privacy.jsx";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
-        <meta
-          http-equiv="Content-Security-Policy"
-          content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;"
+      <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/; font-src 'self' https://fonts.gstatic.com/; connect-src 'self' http://gc.kis.v2.scr.kaspersky-labs.com/;"
         />
+        <title>FurFind</title>
       </Helmet>
       <Router>
         <Routes>
@@ -30,7 +32,7 @@ function App() {
           <Route path="/privacy" element={<Privacy />} />
         </Routes>
       </Router>
-    </>
+    </HelmetProvider>
   );
 }
 

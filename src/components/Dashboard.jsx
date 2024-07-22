@@ -3,6 +3,8 @@ import "../css/dashboard.css";
 import otherPets from "../pets/otherPets";
 import useWishlist from "../pets/useWishlist";
 import OtherSectionCard from "./OtherSectionCard";
+import { Helmet } from "react-helmet-async";
+import { HelmetProvider } from 'react-helmet-async';
 
 export default function Dashboard() {
   const { wishIds, handleWishlist } = useWishlist();
@@ -16,6 +18,13 @@ export default function Dashboard() {
   }, [wishIds]);
 
   return (
+    <HelmetProvider>
+      <Helmet>
+      <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/; font-src 'self' https://fonts.gstatic.com/; connect-src 'self' http://gc.kis.v2.scr.kaspersky-labs.com/;"
+        />
+      </Helmet>
     <div className="dashboard-container">
       <div className="dashboard-menu">
         <div className="user-profile">
@@ -173,5 +182,6 @@ export default function Dashboard() {
         </div>
       </div>
     </div>
+    </HelmetProvider>
   );
 }

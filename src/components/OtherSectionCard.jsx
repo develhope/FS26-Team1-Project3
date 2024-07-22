@@ -5,6 +5,8 @@ import logoImage from "../assets/logo-senza-background.png";
 import otherPetsData from "../pets/otherPets";
 import FormBackground from "./FormBackground";
 import Footer from "./Footer"
+import { Helmet } from "react-helmet-async";
+import { HelmetProvider } from 'react-helmet-async';
 
 function OtherSectionCard() {
   const [otherPets, setOtherPets] = useState([]);
@@ -68,6 +70,13 @@ function OtherSectionCard() {
   };
 
   return (
+    <HelmetProvider>
+      <Helmet>
+      <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/; font-src 'self' https://fonts.gstatic.com/; connect-src 'self' http://gc.kis.v2.scr.kaspersky-labs.com/;"
+        />
+      </Helmet>
     <div>
       <div className="containerAnnunci">
         <FormBackground />
@@ -231,7 +240,7 @@ function OtherSectionCard() {
         )}
       </div>
     </div> <Footer/></div>
-   
+   </HelmetProvider>
   );
 }
 export default OtherSectionCard;

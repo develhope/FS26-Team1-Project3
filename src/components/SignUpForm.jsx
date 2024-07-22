@@ -4,6 +4,8 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "./Navbar";
+import { Helmet } from "react-helmet-async";
+import { HelmetProvider } from 'react-helmet-async';
 
 export default function SignUpForm() {
   const [name, setName] = useState("");
@@ -33,6 +35,13 @@ export default function SignUpForm() {
   }
 
   return (
+    <HelmetProvider>
+      <Helmet>
+      <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/; font-src 'self' https://fonts.gstatic.com/; connect-src 'self' http://gc.kis.v2.scr.kaspersky-labs.com/;"
+        />
+      </Helmet>
     <div className="form-container">
       <FormBackground />
       <div className="navbarcontainer">
@@ -107,5 +116,6 @@ export default function SignUpForm() {
         </form>
       </div>
     </div>
+    </HelmetProvider>
   );
 }
