@@ -1,7 +1,76 @@
 .containerprivacy {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    background-color: #7b2cbf;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  background-color: #7b2cbf;
+  overflow: scroll;
+  position: relative;
+  gap: 180px;
 }
+
+.caption {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 70px;
+  max-width: 1200px;
+  color: #7b2cbf;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  gap: 10px;
+  z-index: 1;
+}
+
+
+
+@media (max-width: 1025px) {
+
+    .containerprivacy {
+      overflow: scroll;
+    }
+  
+    .caption {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    
+    .containerprivacy {
+      overflow: scroll;
+    }
+  
+    .caption {
+      display: flex;
+      flex-direction: column;
+      z-index: 0;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 612px) {
+    .navbar {
+      margin: 80px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+  
+    .containerprivacy {
+      overflow: scroll;
+    }
+  
+    .caption {
+      display: flex;
+      flex-direction: column;
+      z-index: 0;
+      width: 100%;
+    }
+  }

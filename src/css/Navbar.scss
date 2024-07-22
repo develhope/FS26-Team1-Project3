@@ -50,6 +50,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-right: 50px;
 }
 
 .icon-group {
@@ -172,6 +173,7 @@ input:hover {
 
 input[type="checkbox"] {
   -webkit-appearance: none;
+  appearance: none;
   display: none;
   visibility: hidden;
 }

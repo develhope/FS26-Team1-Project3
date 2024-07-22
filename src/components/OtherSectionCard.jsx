@@ -4,8 +4,10 @@ import "../css/OtherSectionCard.css";
 import logoImage from "../assets/logo-senza-background.png";
 import otherPetsData from "../pets/otherPets";
 import FormBackground from "./FormBackground";
-import Footer from "./Footer";
+import Footer from "./Footer"
 import { WishlistContext } from "../contexts/WishlistContext";
+import { HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 function OtherSectionCard() {
   const [otherPets, setOtherPets] = useState([]);
@@ -71,6 +73,40 @@ function OtherSectionCard() {
   };
 
   return (
+    <HelmetProvider>
+      <Helmet>
+      <meta
+  httpEquiv="Content-Security-Policy"
+  content="
+    default-src 'self';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/;
+    font-src 'self' https://fonts.gstatic.com/;
+    img-src 'self' 
+      https://assets.annuncianimali.it/
+      https://animaliadozionetoscana.wordpress.com/
+      https://www.rescuebouledoguefranceseitalia.it/
+      https://i.pinimg.com/
+      https://manualstech.ams3.cdn.digitaloceanspaces.com/
+      https://citynews-trevisotoday.stgy.ovh/
+      https://www.animaleamico.com/
+      https://lh6.googleusercontent.com/
+      https://www.vitadacani.org/
+      https://images.sbito.it/
+      https://www.enpaparma.it/
+      https://lh3.googleusercontent.com/
+      https://www.giornalelavoce.it/
+      https://www.centrotiziano.it/
+      https://img.poweredcache.net/
+      https://cdn.wamiz.fr/
+      https://www.comunicazioneiniziativeenpa.it/
+      https://www.anfipiemonte.org/
+      https://inregalo.net/
+      https://it.virbac.com/
+      https://img.freepik.com/
+      https://spca.bc.ca/;
+  "
+/>
+      </Helmet>
     <div>
       <div className="containerAnnunci">
         <FormBackground />
@@ -245,9 +281,10 @@ function OtherSectionCard() {
             )
           )}
         </div>
-      </div>{" "}
+      </div>
       <Footer />
     </div>
+    </HelmetProvider>
   );
 }
 export default OtherSectionCard;

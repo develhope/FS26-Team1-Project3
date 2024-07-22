@@ -2,6 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 import "../css/about.css";
 import FormBackground from "./FormBackground";
 import Navbar from "./Navbar";
+import { Helmet } from "react-helmet-async";
+import { HelmetProvider } from 'react-helmet-async';
 
 function About() {
   const navigate = useNavigate();
@@ -10,6 +12,13 @@ function About() {
   };
   return (
     <>
+    <HelmetProvider>
+    <Helmet>
+      <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/; font-src 'self' https://fonts.gstatic.com/; connect-src 'self' http://gc.kis.v2.scr.kaspersky-labs.com/;"
+        />
+      </Helmet>
     <div className="about-container">
       <div className="navbar">
         <Navbar />
@@ -81,6 +90,7 @@ function About() {
         </div>
       </div>
     </div>
+    </HelmetProvider>
   </>
   );
 }
