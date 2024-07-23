@@ -7,11 +7,11 @@ import dotenv from 'dotenv';
 import helmet from "helmet";
 import initializePassport from './passport.config.mjs';
 import { createEngine } from 'express-react-views';
-import { mongoose, User } from './mongo.mjs';
 import cors from 'cors';
 import './passport.config.mjs';
 import path from 'path'
 import { fileURLToPath } from 'url';
+import { User, petsCollection } from './db.mjs'; // Importa il db.js
 
 if (process.env.NODE_ENV !== 'production') {
     dotenv.config();
@@ -19,11 +19,9 @@ if (process.env.NODE_ENV !== 'production') {
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-
 const viewsPath = path.join(__dirname, 'src');
 
 app.set('views', viewsPath);
-
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use(helmet({
@@ -99,9 +97,53 @@ app.post('/iscriviti', async (req, res) => {
     }
 });
 
+
+
+// // MongoDB connection setup
+// const uri = "mongodb+srv://FurFind:chitarrablu@clusterfurfind.ljcgcss.mongodb.net/?retryWrites=true&w=majority&appName=ClusterFurFind";
+// const client = new MongoClient(uri, {
+//     serverApi: {
+//         version: ServerApiVersion.v1,
+//         strict: true,
+//         deprecationErrors: true,
+//     }
+// });
+
+// let petsCollection;
+
+// async function connectToMongoDB() {
+//     try {
+//         await client.connect();
+//         console.log("Connected to MongoDB");
+//         const database = client.db("furfindDB");
+//         petsCollection = database.collection("pets");
+//     } catch (error) {
+//         console.error("Failed to connect to MongoDB", error);
+//         process.exit(1);
+//     }
+// }
+
+// connectToMongoDB();
+
+// Route for fetching pets
+app.get('/pets', async (req, res) => {
+    try {
+        const pets = await petsCollection.find({}).toArray();
+        res.json(pets);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch pets' });
+    }
+});
+
+
+
 app.get('*', (req, res) => {
     res.sendFile(path.join(buildPath, 'index.html'));
 });
+
+
+
+
 
 app.listen(3000, () => {
     console.log(`Server is running on port http://localhost:3000`);
