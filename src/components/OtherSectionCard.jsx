@@ -2,7 +2,6 @@ import { useState, useEffect} from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "../css/OtherSectionCard.css";
 import logoImage from "../assets/logo-senza-background.png";
-import otherPetsData from "../pets/otherPets";
 import FormBackground from "./FormBackground";
 import Footer from "./Footer"
 import { Helmet } from "react-helmet-async";
@@ -28,8 +27,18 @@ function OtherSectionCard() {
   }, []);
 
   useEffect(() => {
-    setOtherPets(otherPetsData);
-    setFilteredPets(otherPetsData);
+    const fetchPets = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/pets');
+        const data = await response.json();
+        setOtherPets(data);
+        setFilteredPets(data);
+      } catch (error) {
+        console.error('Errore durante il recupero dei dati:', error);
+      }
+    };
+
+    fetchPets();
   }, []);
 
   const handleAnimalTypeChange = (event) => {

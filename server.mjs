@@ -11,7 +11,7 @@ import cors from 'cors';
 import './passport.config.mjs';
 import path from 'path'
 import { fileURLToPath } from 'url';
-import { User, petsCollection } from './db.mjs'; // Importa il db.js
+import { User, petsCollection } from './db.mjs';
 
 if (process.env.NODE_ENV !== 'production') {
     dotenv.config();
@@ -98,34 +98,6 @@ app.post('/iscriviti', async (req, res) => {
 });
 
 
-
-// // MongoDB connection setup
-// const uri = "mongodb+srv://FurFind:chitarrablu@clusterfurfind.ljcgcss.mongodb.net/?retryWrites=true&w=majority&appName=ClusterFurFind";
-// const client = new MongoClient(uri, {
-//     serverApi: {
-//         version: ServerApiVersion.v1,
-//         strict: true,
-//         deprecationErrors: true,
-//     }
-// });
-
-// let petsCollection;
-
-// async function connectToMongoDB() {
-//     try {
-//         await client.connect();
-//         console.log("Connected to MongoDB");
-//         const database = client.db("furfindDB");
-//         petsCollection = database.collection("pets");
-//     } catch (error) {
-//         console.error("Failed to connect to MongoDB", error);
-//         process.exit(1);
-//     }
-// }
-
-// connectToMongoDB();
-
-// Route for fetching pets
 app.get('/pets', async (req, res) => {
     try {
         const pets = await petsCollection.find({}).toArray();
@@ -136,13 +108,9 @@ app.get('/pets', async (req, res) => {
 });
 
 
-
 app.get('*', (req, res) => {
-    res.sendFile(path.join(buildPath, 'index.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
-
-
-
 
 
 app.listen(3000, () => {

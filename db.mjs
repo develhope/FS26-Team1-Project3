@@ -1,7 +1,10 @@
 import mongoose from 'mongoose';
 import { MongoClient, ServerApiVersion } from 'mongodb';
+import dotenv from 'dotenv';
 
-const uri = "mongodb+srv://FurFind:chitarrablu@clusterfurfind.ljcgcss.mongodb.net/?retryWrites=true&w=majority&appName=ClusterFurFind";
+dotenv.config()
+
+const uri = process.env.MONGO_URI;
 
 // Connetti a MongoDB con Mongoose
 async function connectMongoose() {
