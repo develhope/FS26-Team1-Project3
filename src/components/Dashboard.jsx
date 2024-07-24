@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "../css/dashboard.css";
-import otherPets from "../pets/otherPets";
 import useWishlist from "../pets/useWishlist";
 import OtherSectionCard from "./OtherSectionCard";
 import { Helmet } from "react-helmet-async";

@@ -2,11 +2,10 @@ import mongoose from 'mongoose';
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import dotenv from 'dotenv';
 
-dotenv.config()
+dotenv.config();
 
 const uri = process.env.MONGO_URI;
 
-// Connetti a MongoDB con Mongoose
 async function connectMongoose() {
     try {
         await mongoose.connect(uri, {
@@ -19,14 +18,22 @@ async function connectMongoose() {
         process.exit(1);
     }
 }
+
 connectMongoose();
 
-// Definisci lo schema e il modello User
 const userSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
     email: {
         type: String,
         required: true,
         unique: true,
+    },
+    phone: {
+        type: String,
+        required: true,
     },
     password: {
         type: String,
@@ -34,9 +41,11 @@ const userSchema = new mongoose.Schema({
     },
 });
 
+
 const User = mongoose.model('User', userSchema);
 
-// Configurazione MongoClient
+
+// Configurazione MongoClient per altre operazioni di database
 const client = new MongoClient(uri, {
     serverApi: {
         version: ServerApiVersion.v1,
@@ -61,6 +70,6 @@ async function connectToMongoDB() {
 
 connectToMongoDB();
 
-// Esporta le variabili
 export { User, petsCollection };
+
 

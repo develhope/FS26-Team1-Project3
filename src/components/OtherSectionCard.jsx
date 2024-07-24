@@ -82,9 +82,17 @@ function OtherSectionCard() {
     <HelmetProvider>
       <Helmet>
       <meta
-          httpEquiv="Content-Security-Policy"
-          content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/; font-src 'self' https://fonts.gstatic.com/; connect-src 'self' http://gc.kis.v2.scr.kaspersky-labs.com/;"
-        />
+                    http-equiv="Content-Security-Policy"
+                    content="
+                        default-src 'self';
+                        script-src 'self' https://cdnjs.cloudflare.com https://gc.kis.v2.scr.kaspersky-labs.com;
+                        style-src 'self' https://fonts.googleapis.com https://gc.kis.v2.scr.kaspersky-labs.com 'unsafe-inline';
+                        font-src 'self' https://fonts.gstatic.com;
+                        img-src 'self' data: https:;
+                        connect-src 'self' http://localhost:5173 http://localhost:3000;
+                        frame-src 'none';
+                    "
+                />
       </Helmet>
     <div>
       <div className="containerAnnunci">

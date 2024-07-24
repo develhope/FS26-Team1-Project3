@@ -17,7 +17,7 @@ export default function SignUpForm() {
 
   async function submit(e) {
     e.preventDefault();
-
+  
     try {
       const response = await axios.post("http://localhost:3000/iscriviti", {
         name,
@@ -25,12 +25,13 @@ export default function SignUpForm() {
         phone,
         password,
       });
+      console.log("Response:", response); 
       if (response.status === 200) {
         navigate("/login");
       }
     } catch (error) {
-      setError("Registrazione fallita. Riprova.");
-      console.error(error);
+      setError(error.response?.data?.error || "Registrazione fallita. Riprova.");
+      console.error(error.response?.data || error);
     }
   }
 
