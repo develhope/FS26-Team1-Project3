@@ -3,8 +3,20 @@ import FormBackground from "./FormBackground";
 import Navbar from "./Navbar";
 import { Helmet } from "react-helmet-async";
 import { HelmetProvider } from 'react-helmet-async';
+import { useNavigate, Link } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
+import UploadPhoto from "./UploadPhoto";
 
 export default function LoginForm() {
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [breed, setBreed] = useState("");
+  const [locatio , setLocation] = useState("");
+  const [description, setDescription] = useState("");
+  const [picture, setPicture] = useState("");
+  const navigate = useNavigate();
+
   return (
     <HelmetProvider>
       <Helmet>
@@ -79,12 +91,7 @@ export default function LoginForm() {
             <label className="sub_title" htmlFor="password">
               Foto
             </label>
-            <input
-              placeholder="Aggiungi una foto"
-              id="password"
-              className="form_style"
-              type="password"
-            />
+            <UploadPhoto/>
           </div>
           <div className="btn-area">
             <button className="btn">AGGIUNGI</button>
