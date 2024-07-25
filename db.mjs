@@ -1,8 +1,26 @@
 import mongoose from 'mongoose';
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import dotenv from 'dotenv';
+import multer from 'multer';
+import path from 'path';
+
 
 dotenv.config();
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'uploads/');
+    },
+    filename: function (req, file, cb) {
+      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+      cb(null, uniqueSuffix + '-' + file.originalname);
+    }
+});
+
+  
+  const upload = multer({ storage: storage });
+
+
 
 const uri = process.env.MONGO_URI;
 
@@ -42,7 +60,21 @@ const userSchema = new mongoose.Schema({
 });
 
 
+const petSchema = new mongoose.Schema({
+    name: String,
+    age: String,
+    city: String,
+    description: String,
+    razza: String,
+    type: String,
+    size: String,
+    image: String, 
+    nameImage: String
+  });
+
+
 const User = mongoose.model('User', userSchema);
+const Pet = mongoose.model('Pet', petSchema);
 
 
 // Configurazione MongoClient per altre operazioni di database
@@ -70,6 +102,6 @@ async function connectToMongoDB() {
 
 connectToMongoDB();
 
-export { User, petsCollection };
+export { User, Pet, petsCollection, upload };
 
 

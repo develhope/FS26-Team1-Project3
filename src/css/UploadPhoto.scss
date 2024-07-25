@@ -1,11 +1,4 @@
-.container {
-    padding: 50px 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-  }
+
   
   .box {
     position: relative;
@@ -32,11 +25,12 @@
   }
   
   .dropzone-wrapper {
-    border: 2px dashed #d9c6ec; // Usa un colore coerente con il form
-    color: #d9c6ec; // Stesso colore per testo e bordo
+    border: 2px dashed #d9c6ec; 
+    color: #d9c6ec; 
     position: relative;
     height: 150px;
-    border-radius: 4px; // Aggiungi un bordo arrotondato se necessario
+    width: 200px;
+    border-radius: 4px; 
   }
   
   .dropzone-desc {
@@ -76,7 +70,17 @@
     margin-bottom: 0;
   }
 
-  .photowrapper {}
+  .photowrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;  
+    gap: 20px;
+  }
+
+  .btn {
+    width: 120px;
+  }
   
   // Media queries
   @media (max-width: 769px) {

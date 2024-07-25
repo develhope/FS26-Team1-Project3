@@ -30,7 +30,6 @@ const UploadPhoto = () => {
           <div className="row">
             <div className="col-md-12">
               <div className="form-group">
-                <label className="control-label">Upload File</label>
                 {preview && (
                   <div className="preview-zone">
                     <div className="box box-solid">
@@ -56,7 +55,7 @@ const UploadPhoto = () => {
                 <div className="dropzone-wrapper">
                   <div className="dropzone-desc">
                     <i className="glyphicon glyphicon-download-alt"></i>
-                    <p>Carica una immagine.</p>
+                    <p>Clicca per caricare una immagine.</p>
                   </div>
                   <input
                     id="file-input"

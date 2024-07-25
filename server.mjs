@@ -9,7 +9,7 @@ import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import initializePassport from './passport.config.mjs';
-import { User, petsCollection } from './db.mjs';
+import { User, Pet, upload, petsCollection } from './db.mjs';
 
 
 if (process.env.NODE_ENV !== 'production') {
@@ -66,6 +66,33 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+app.post('/upload', upload.single('image'), async (req, res) => {
+    console.log("Received upload request:", req.body);
+    console.log("File received:", req.file);
+
+    const { name, age, breed, city, description } = req.body;
+    const imagePath = req.file ? req.file.path : null;
+
+    try {
+        const newPet = new Pet({
+            name,
+            age,
+            city,
+            description,
+            breed,
+            image: imagePath,
+            nameImage: req.file ? req.file.filename : null
+        });
+
+        await newPet.save();
+        res.status(201).json({ message: 'Pet added successfully!' });
+    } catch (error) {
+        console.error("Error saving pet:", error);
+        res.status(500).json({ error: 'An error occurred while saving the pet.' });
+    }
+});
+
+
 app.post('/login', passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login',
@@ -75,7 +102,7 @@ app.post('/login', passport.authenticate('local', {
 app.post('/iscriviti', async (req, res) => {
     try {
         const { name, email, phone, password } = req.body;
-        console.log("Received data:", req.body);  // Log di debug
+        console.log("Received data:", req.body);
 
         if (!name || !email || !phone || !password) {
             return res.status(400).json({ error: 'Tutti i campi sono obbligatori' });
@@ -101,7 +128,6 @@ app.post('/iscriviti', async (req, res) => {
         res.status(500).json({ error: 'Registrazione fallita' });
     }
 });
-
 
 
 app.get('/pets', async (req, res) => {

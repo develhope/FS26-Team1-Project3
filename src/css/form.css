@@ -1,16 +1,12 @@
-.container {
+
+/* .container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-}
+} */
 
-.navbarcontainer {
-  display: flex;
-  justify-content: center;
-  padding: 70px;
-}
 
 .form-container {
   display: flex;
@@ -19,7 +15,17 @@
   flex-direction: column;
   text-align: center;
   height: 100vh;
+  overflow: scroll;
 }
+
+
+.navbarcontainer {
+  display: flex;
+  justify-content: center;
+  padding: 70px;
+}
+
+
 
 .form_area::after {
   content: "";
@@ -128,6 +134,8 @@
   color: #264143;
   padding: 5px;
 }
+
+
 
 /* Max width 769px */
 @media (max-width: 769px) {
