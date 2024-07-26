@@ -25,15 +25,14 @@ const distPath = path.join(__dirname, 'dist');
 app.use(express.static(distPath));
 
 const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, 'uploads/');
+    destination: (req, file, cb) => {
+      cb(null, 'uploads/'); // Cartella dove salvare le immagini
     },
-    filename: function (req, file, cb) {
-      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-      cb(null, uniqueSuffix + '-' + file.originalname);
+    filename: (req, file, cb) => {
+      cb(null, Date.now() + path.extname(file.originalname)); // Nome del file unico
     }
-});
-
+  });
+  
   
   const upload = multer({ storage: storage });
 
@@ -102,7 +101,8 @@ app.post('/upload', upload.single('image'), async (req, res) => {
       });
 
       await newPet.save();
-      res.status(201).json(newPet);
+      const imageUrl = `http://localhost:3000/uploads/${req.file.filename}`;
+      res.status(201).json({ newPet, imageUrl });
     } catch (error) {
       console.error('Failed to upload file and save data:', error);
       res.status(500).json({ error: 'Errore durante l\'upload del file e il salvataggio dei dati' });
