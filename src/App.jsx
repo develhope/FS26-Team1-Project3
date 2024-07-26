@@ -16,15 +16,7 @@ function App() {
       <Helmet>
       <meta
           httpEquiv="Content-Security-Policy"
-          content="
-            default-src 'self';
-            img-src 'self' data: https://assets.annuncianimali.it https://animaliadozionetoscana.wordpress.com https://www.rescuebouledoguefranceseitalia.it https://i.pinimg.com https://manualstech.ams3.cdn.digitaloceanspaces.com https://citynews-trevisotoday.stgy.ovh https://www.animaleamico.com https://lh6.googleusercontent.com;
-            style-src 'self' 'unsafe-inline' https://fonts.googleapis.com http://gc.kis.v2.scr.kaspersky-labs.com;
-            font-src 'self' https://fonts.gstatic.com;
-            connect-src 'self' http://gc.kis.v2.scr.kaspersky-labs.com;
-            frame-src 'self';
-            script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
-          "
+          content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;"
         />
         <title>FurFind</title>
       </Helmet>

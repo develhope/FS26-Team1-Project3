@@ -1,9 +1,8 @@
 import "../css/form.css";
-import "../css/UploadPhoto.scss";
 import FormBackground from "./FormBackground";
 import Navbar from "./Navbar";
 import { Helmet } from "react-helmet-async";
-import { HelmetProvider } from "react-helmet-async";
+import { HelmetProvider } from 'react-helmet-async';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -11,52 +10,51 @@ import axios from "axios";
 export default function NewAnnounce() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
-  const [razza, setRazza] = useState("");
-  const [city, setCity] = useState("");
+  const [breed, setBreed] = useState("");
+  const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
-  const [preview, setPreview] = useState(null);
+  const [type, setType] = useState("");
+  const [size, setSize] = useState("");
+  const [ownerName, setOwnerName] = useState("");
+  const [ownerPhone, setOwnerPhone] = useState("");
+  const [ownerEmail, setOwnerEmail] = useState("");
   const [file, setFile] = useState(null);
-  const [fileName, setFileName] = useState("");
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setPreview(e.target.result);
-        setFileName(file.name);
-      };
-      reader.readAsDataURL(file);
-      setFile(file);
-    }
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const formData = new FormData();
-    formData.append("name", name);
-    formData.append("age", age);
-    formData.append("razza", razza); // Assicurati che sia coerente con il backend
-    formData.append("city", city); // Assicurati che sia coerente con il backend
-    formData.append("description", description);
-    if (file) {
-      formData.append("image", file);
-    }
-
-    console.log("Submitting form with data:", formData);
+    formData.append('name', name);
+    formData.append('age', age);
+    formData.append('breed', breed);
+    formData.append('location', location);
+    formData.append('description', description);
+    formData.append('type', type);
+    formData.append('size', size);
+    formData.append('ownerName', ownerName);
+    formData.append('ownerPhone', ownerPhone);
+    formData.append('ownerEmail', ownerEmail);
+    formData.append('image', file);
 
     try {
-      const response = await axios.post("/upload", formData, {
+      const response = await axios.post('http://localhost:3000/upload', formData, {
         headers: {
-          "Content-Type": "multipart/form-data",
-        },
+          'Content-Type': 'multipart/form-data'
+        }
       });
-      console.log("Response from server:", response.data);
-      alert('Il tuo annuncio è stato caricato con successo!');
+      if (response.status === 201) {
+        setMessage('Annuncio aggiunto con successo!');
+        navigate("/"); // Reindirizza l'utente dopo il caricamento
+      } else {
+        throw new Error('Errore durante il caricamento del file');
+      }
     } catch (error) {
-      console.error("Error uploading the image:", error);
-      alert('Si è verificato un errore durante il caricamento.');
+      setMessage(error.response ? error.response.data.error : 'Errore durante il caricamento del file');
     }
   };
 
@@ -65,148 +63,152 @@ export default function NewAnnounce() {
       <Helmet>
         <meta
           httpEquiv="Content-Security-Policy"
-          content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/; font-src 'self' https://fonts.gstatic.com/; connect-src 'self' http://localhost:5173/; img-src 'self' data:;"
+          content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;"
         />
       </Helmet>
+
       <div className="form-container">
         <FormBackground />
-        <div className="navbarcontainer">
-          <Navbar />
-        </div>
+        <Navbar />
         <div className="form_area">
           <p className="title">AGGIUNGI ANNUNCIO</p>
           <form onSubmit={handleSubmit}>
             <div className="form_group">
-              <label className="sub_title" htmlFor="name">
-                Nome
-              </label>
+              <label className="sub_title" htmlFor="name">Nome</label>
               <input
-                placeholder="Inserisci nome animale"
+                id="name"
                 className="form_style"
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                placeholder="Nome"
+                required
               />
             </div>
             <div className="form_group">
-              <label className="sub_title" htmlFor="age">
-                Età
-              </label>
+              <label className="sub_title" htmlFor="age">Età</label>
               <input
-                placeholder="età dell'animale"
                 id="age"
                 className="form_style"
-                type="text" // Cambiato da email a text
+                type="text"
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
+                placeholder="Età"
+                required
               />
             </div>
             <div className="form_group">
-              <label className="sub_title" htmlFor="razza">
-                Razza
-              </label>
+              <label className="sub_title" htmlFor="breed">Razza</label>
               <input
-                placeholder="inserisci razza dell'animale"
-                id="razza"
+                id="breed"
                 className="form_style"
                 type="text"
-                value={razza}
-                onChange={(e) => setRazza(e.target.value)}
+                value={breed}
+                onChange={(e) => setBreed(e.target.value)}
+                placeholder="Razza"
+                required
               />
             </div>
             <div className="form_group">
-              <label className="sub_title" htmlFor="city">
-                Luogo
-              </label>
+              <label className="sub_title" htmlFor="location">Luogo</label>
               <input
-                placeholder="inserisci la città"
-                id="city"
+                id="location"
                 className="form_style"
                 type="text"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="Luogo"
+                required
               />
             </div>
             <div className="form_group">
-              <label className="sub_title" htmlFor="description">
-                Descrizione
-              </label>
+              <label className="sub_title" htmlFor="description">Descrizione</label>
               <input
-                placeholder="inserisci una breve descrizione"
                 id="description"
                 className="form_style"
                 type="text"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
+                placeholder="Descrizione"
+                required
               />
             </div>
             <div className="form_group">
-              <label className="sub_title" htmlFor="file-input">
-                Foto
-              </label>
-              <section className="photowrapper">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-md-12">
-                      <div className="form-group">
-                        {preview && (
-                          <div className="preview-zone">
-                            <div className="box box-solid">
-                              <div className="box-header with-border">
-                                <div>
-                                  <b>Preview</b>
-                                </div>
-                                <div className="box-tools pull-right">
-                                  <button
-                                    type="button"
-                                    className="btn btn-danger btn-xs remove-preview"
-                                    onClick={() => { setPreview(null); setFile(null); setFileName(""); }}
-                                  >
-                                    <i className="fa fa-times"></i> Reset This
-                                    Form
-                                  </button>
-                                </div>
-                              </div>
-                              <div className="box-body">
-                                <img width="200" src={preview} alt="Preview" />
-                                <p>{fileName}</p>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                        <div className="dropzone-wrapper">
-                          <div className="dropzone-desc">
-                            <i className="glyphicon glyphicon-download-alt"></i>
-                            <p>Clicca per caricare una immagine.</p>
-                          </div>
-                          <input
-                            id="file-input"
-                            type="file"
-                            name="image"
-                            className="dropzone"
-                            onChange={handleFileChange}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+              <label className="sub_title" htmlFor="type">Tipo</label>
+              <input
+                id="type"
+                className="form_style"
+                type="text"
+                value={type}
+                onChange={(e) => setType(e.target.value)}
+                placeholder="Tipo"
+                required
+              />
+            </div>
+            <div className="form_group">
+              <label className="sub_title" htmlFor="size">Taglia</label>
+              <input
+                id="size"
+                className="form_style"
+                type="text"
+                value={size}
+                onChange={(e) => setSize(e.target.value)}
+                placeholder="Taglia"
+                required
+              />
+            </div>
+            <div className="form_group">
+              <label className="sub_title" htmlFor="ownerName">Nome del Proprietario</label>
+              <input
+                id="ownerName"
+                className="form_style"
+                type="text"
+                value={ownerName}
+                onChange={(e) => setOwnerName(e.target.value)}
+                placeholder="Nome del Proprietario"
+                required
+              />
+            </div>
+            <div className="form_group">
+              <label className="sub_title" htmlFor="ownerPhone">Telefono del Proprietario</label>
+              <input
+                id="ownerPhone"
+                className="form_style"
+                type="text"
+                value={ownerPhone}
+                onChange={(e) => setOwnerPhone(e.target.value)}
+                placeholder="Telefono del Proprietario"
+                required
+              />
+            </div>
+            <div className="form_group">
+              <label className="sub_title" htmlFor="ownerEmail">Email del Proprietario</label>
+              <input
+                id="ownerEmail"
+                className="form_style"
+                type="email"
+                value={ownerEmail}
+                onChange={(e) => setOwnerEmail(e.target.value)}
+                placeholder="Email del Proprietario"
+                required
+              />
+            </div>
+            <div className="form_group">
+              <label className="sub_title" htmlFor="image">Foto</label>
+              <input
+                id="image"
+                className="form_style"
+                type="file"
+                onChange={handleFileChange}
+                required
+              />
             </div>
             <div className="btn-area">
-              <button type="submit" className="btn">AGGIUNGI</button>
-              <p>
-                Non hai un Account?{" "}
-                <a className="link" href="/iscriviti">
-                  Iscriviti qua!
-                </a>
-              </p>
-              <a className="link" href=""></a>
+              <button type="submit" className="btn">Aggiungi Annuncio</button>
             </div>
-            <a className="link" href=""></a>
+            {message && <p>{message}</p>}
           </form>
         </div>
-        <a className="link" href=""></a>
       </div>
     </HelmetProvider>
   );

@@ -9,7 +9,8 @@ import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import initializePassport from './passport.config.mjs';
-import { User, Pet, upload, petsCollection } from './db.mjs';
+import { User, Pet, petsCollection } from './db.mjs';
+import multer from 'multer';
 
 
 if (process.env.NODE_ENV !== 'production') {
@@ -18,24 +19,36 @@ if (process.env.NODE_ENV !== 'production') {
 
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-
 const distPath = path.join(__dirname, 'dist');
 
 
 app.use(express.static(distPath));
 
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'uploads/');
+    },
+    filename: function (req, file, cb) {
+      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+      cb(null, uniqueSuffix + '-' + file.originalname);
+    }
+});
+
+  
+  const upload = multer({ storage: storage });
+
+
 
 app.use(helmet({
     contentSecurityPolicy: {
         directives: {
-            "default-src": ["'self'"],
-            "script-src": ["'self'", "https://cdnjs.cloudflare.com"],
-            "style-src": ["'self'", "https://fonts.googleapis.com"],
-            "font-src": ["'self'", "https://fonts.gstatic.com"],
-            "img-src": ["'self'", "data:", "https:"],
-            "connect-src": ["'self'", "http://localhost:5173/", "http://localhost:3000"],
-            "frame-src": ["'none'"]
+            defaultSrc: ["'self'"],
+            connectSrc: ["'self'", "http://localhost:3000/", "http://gc.kis.v2.scr.kaspersky-labs.com/"],
+            scriptSrc: ["'self'", "'unsafe-inline'", "https://cdnjs.cloudflare.com/"],
+            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com/"],
+            fontSrc: ["'self'", "https://fonts.gstatic.com/"],
+            imgSrc: ["'self'", "data:", "https:"],
+            frameSrc: ["'none'"]
         }
     }
 }));
@@ -54,7 +67,7 @@ initializePassport(passport, async email => {
 });
 
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(flash());
 app.use(session({
@@ -67,30 +80,34 @@ app.use(passport.session());
 
 
 app.post('/upload', upload.single('image'), async (req, res) => {
-    console.log("Received upload request:", req.body);
-    console.log("File received:", req.file);
-
-    const { name, age, breed, city, description } = req.body;
-    const imagePath = req.file ? req.file.path : null;
-
     try {
-        const newPet = new Pet({
-            name,
-            age,
-            city,
-            description,
-            breed,
-            image: imagePath,
-            nameImage: req.file ? req.file.filename : null
-        });
+      if (!req.file) {
+        return res.status(400).send('No file uploaded.');
+      }
 
-        await newPet.save();
-        res.status(201).json({ message: 'Pet added successfully!' });
+      const newPet = new Pet({
+        name: req.body.name,
+        age: req.body.age,
+        breed: req.body.breed,
+        city: req.body.location,
+        description: req.body.description,
+        imagePath: req.file.path,
+        type: req.body.type,
+        size: req.body.size,
+        owner: {
+          name: req.body.ownerName,
+          phone: req.body.ownerPhone,
+          email: req.body.ownerEmail
+        }
+      });
+
+      await newPet.save();
+      res.status(201).json(newPet);
     } catch (error) {
-        console.error("Error saving pet:", error);
-        res.status(500).json({ error: 'An error occurred while saving the pet.' });
+      console.error('Failed to upload file and save data:', error);
+      res.status(500).json({ error: 'Errore durante l\'upload del file e il salvataggio dei dati' });
     }
-});
+  });
 
 
 app.post('/login', passport.authenticate('local', {
@@ -121,7 +138,7 @@ app.post('/iscriviti', async (req, res) => {
             password: hashedPassword,
         });
         await user.save();
-        console.log("User saved:", user);  // Log di debug
+        console.log("User saved:", user);
         res.status(200).redirect('/login');
     } catch (error) {
         console.error('Errore durante la registrazione:', error);

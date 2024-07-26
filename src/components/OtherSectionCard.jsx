@@ -33,6 +33,7 @@ function OtherSectionCard() {
         const data = await response.json();
         setOtherPets(data);
         setFilteredPets(data);
+        console.log(data)
       } catch (error) {
         console.error('Errore durante il recupero dei dati:', error);
       }
@@ -82,17 +83,9 @@ function OtherSectionCard() {
     <HelmetProvider>
       <Helmet>
       <meta
-                    http-equiv="Content-Security-Policy"
-                    content="
-                        default-src 'self';
-                        script-src 'self' https://cdnjs.cloudflare.com https://gc.kis.v2.scr.kaspersky-labs.com;
-                        style-src 'self' https://fonts.googleapis.com https://gc.kis.v2.scr.kaspersky-labs.com 'unsafe-inline';
-                        font-src 'self' https://fonts.gstatic.com;
-                        img-src 'self' data: https:;
-                        connect-src 'self' http://localhost:5173 http://localhost:3000;
-                        frame-src 'none';
-                    "
-                />
+          httpEquiv="Content-Security-Policy"
+          content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;"
+        />
       </Helmet>
     <div>
       <div className="containerAnnunci">
@@ -157,13 +150,14 @@ function OtherSectionCard() {
       <div className="otherCard">
         {filteredPets.map(
           (
-            { image, name, age, city, description, razza, nameImage, owner },
+            { 
+              imagePath, name, age, city, description, breed, alt, owner },
             index
           ) => (
             <div key={index}>
               <div className="containerOtherCard">
                 <div className="nomeImmagine">
-                  <img className="immaginiPet" src={image} alt={nameImage} />
+                  <img className="immaginiPet" src={imagePath} alt={alt} />
                   <div className="nomiPet">
                     <svg
                       className="iconPet"
@@ -205,7 +199,7 @@ function OtherSectionCard() {
                     <b>Età:</b> {age}
                   </div>
                   <div className="scritte">
-                    <b>Razza:</b> {razza}
+                    <b>Razza:</b> {breed}
                   </div>
                   <div className="scritte">
                     <b>Descrizione:</b> {description}
