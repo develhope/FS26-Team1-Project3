@@ -13,6 +13,7 @@ import { User, Pet, petsCollection } from './db.mjs';
 import multer from 'multer';
 
 
+
 if (process.env.NODE_ENV !== 'production') {
     dotenv.config();
 }
@@ -36,35 +37,38 @@ const storage = multer.diskStorage({
   
   const upload = multer({ storage: storage });
 
+  app.use(helmet());
 
+// app.use(helmet({
+//     contentSecurityPolicy: {
+//         directives: {
+//             defaultSrc: ["'self'"],
+//             connectSrc: ["'self'", "http://localhost:3000/", "http://gc.kis.v2.scr.kaspersky-labs.com/"],
+//             scriptSrc: ["'self'", "'unsafe-inline'", "https://cdnjs.cloudflare.com/"],
+//             styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com/"],
+//             fontSrc: ["'self'", "https://fonts.gstatic.com/"],
+//             imgSrc: ["'self'", "data:", "https:"],
+//             frameSrc: ["'none'"]
+//         }
+//     }
+// }));
 
-app.use(helmet({
-    contentSecurityPolicy: {
-        directives: {
-            defaultSrc: ["'self'"],
-            connectSrc: ["'self'", "http://localhost:3000/", "http://gc.kis.v2.scr.kaspersky-labs.com/"],
-            scriptSrc: ["'self'", "'unsafe-inline'", "https://cdnjs.cloudflare.com/"],
-            styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com/"],
-            fontSrc: ["'self'", "https://fonts.gstatic.com/"],
-            imgSrc: ["'self'", "data:", "https:"],
-            frameSrc: ["'none'"]
-        }
-    }
-}));
-
-
-app.use(cors({
+const customCorsMiddleware = (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // Sostituisci con il tuo origin frontend
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    next();
+  };
+  
+  app.use(customCorsMiddleware);
+  const corsOptions = {
     origin: 'http://localhost:5173',
-    credentials: true,
-}));
+    credentials: true, // Permette i cookie e le sessioni tra domini
+    optionsSuccessStatus: 200
+};
 
-
-initializePassport(passport, async email => {
-    return await User.findOne({ email });
-}, async id => {
-    return await User.findById(id);
-});
-
+app.use(cors(corsOptions));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -74,8 +78,18 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
-app.use(passport.initialize());
-app.use(passport.session());
+
+// initializePassport(passport);
+
+// app.use(session({
+//   secret: 'segreto',
+//   resave: false,
+//   saveUninitialized: false
+// }));
+
+// app.use(passport.initialize());
+// app.use(passport.session());
+
 
 
 app.post('/upload', upload.single('image'), async (req, res) => {
@@ -110,11 +124,41 @@ app.post('/upload', upload.single('image'), async (req, res) => {
   });
 
 
-app.post('/login', passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: '/login',
-    failureFlash: true
-}));
+// app.post('/login', passport.authenticate('local', {
+//     successRedirect: '/',
+//     failureRedirect: '/login',
+//     failureFlash: true
+// }));
+
+app.post("/login", async(req, res) => {
+    try{
+        const {email, password} = req.body;
+        console.log(req.body);
+        if (!email || !password) {
+            return res.status(400).json({ error: 'Tutti i campi sono obbligatori' });
+        }
+        const user = await User.findOne({ email });
+        if (!user) {            
+            res.status(401).json({ message: "Email non trovata" });
+            return;
+        }
+        const match = await bcrypt.compare(password, user.password);
+        if (match) {            
+            req.session.user = user;
+            res.send("ok")
+            console.log("login effettuato:", email);
+            // res.redirect('/'); 
+        } else {         
+            res.status(401).json({ message: "Password errata" });
+        }
+    } catch (error) {
+        console.error('Errore durante il login:', error);
+        res.status(500).json({ message: "Errore interno del server durante il login" });
+    }
+
+    })
+
+
 
 app.post('/iscriviti', async (req, res) => {
     try {

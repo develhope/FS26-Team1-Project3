@@ -22,7 +22,7 @@ export default function LoginForm() {
       }, {
         withCredentials: true, // necessario per inviare i cookie di sessione
       });
-
+console.log('Login effettuato!')
       if (response.status === 200) {
         navigate('/');
       }
@@ -37,7 +37,7 @@ export default function LoginForm() {
       <Helmet>
       <meta
           httpEquiv="Content-Security-Policy"
-          content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/; font-src 'self' https://fonts.gstatic.com/; connect-src 'self' http://gc.kis.v2.scr.kaspersky-labs.com/;"
+          content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;"
         />
       </Helmet>
     <div className="form-container">
