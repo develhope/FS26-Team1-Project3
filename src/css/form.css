@@ -47,6 +47,7 @@
   z-index: 2;
   position: relative;
   overflow: hidden;
+  margin-top: 50px;
 }
 
 .title {
@@ -185,4 +186,3 @@
 .btn-area {
   margin-top: 15px;
 }
-
