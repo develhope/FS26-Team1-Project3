@@ -58,8 +58,6 @@
   width: 36px;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 4px;
-  padding: 2px;
   border-radius: 8px;
   display: inline-flex;
   align-items: center;
@@ -142,7 +140,6 @@ input:hover {
   animation: 600ms linear forwards;
   cursor: pointer;
 }
-/*pushing a hamburger menu into a pillow texture like background*/
 
 .menuButton {
   display: none;
@@ -157,6 +154,8 @@ input:hover {
   background: #f8f9fa;
   border: 1px solid transparent;
   transition: all 0.3s;
+  position: relative;
+  z-index: 1;
 }
 
 .menuButton:hover {
@@ -188,17 +187,21 @@ input[type="checkbox"] {
 
 .dropdowncontent {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  width: 480px;
+  gap: 32px;
+  width: 65px;
   padding: 10px;
   background-color: white;
   border-radius: 10px;
-  margin-left: 600px;
   margin-bottom: 14px;
+  min-height: 600px;
   text-align: center;
+  position: absolute;
+  right: -10px;
+  top: 50px;
+  z-index: -1;
 }
 
 .dropdowncontent a {
@@ -244,39 +247,73 @@ input[type="checkbox"] {
 
 @media (max-width: 768px) {
   .Navbar {
+    display: none;
+  }
+
+  .menuButton {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
-    height: auto;
+    height: 50px;
     padding: 10px;
     z-index: 1;
     max-width: fit-content;
+    left: 0;
+    top: 0;
+    position: absolute;
+  }
+
+  .dropdowncontent {
+    display: flex;
+    z-index: 1;
+  }
+
+  .logo-FurFind {
+    display: none;
   }
 
   .linksdeilinks {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
   }
 
-.navbar-links {
-  display: flex;
-  flex-direction: column;
-}
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
   .containericons {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 15px;
   }
 
+  .dropdowncontent ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icon-group:hover {
+    transition: none;
+    width: 36px;
+  }
+
+  .icon-group {
+    transition: none;
+  }
 }
 
 @media (min-width: 350px) and (max-width: 654px) {
   .Navbar {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -286,4 +323,7 @@ input[type="checkbox"] {
     z-index: 1;
   }
 
+  .icon-group:hover {
+    transition: none;
+  }
 }

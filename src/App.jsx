@@ -15,36 +15,9 @@ function App() {
     <HelmetProvider>
       <Helmet>
       <meta
-  httpEquiv="Content-Security-Policy"
-  content="
-    default-src 'self';
-    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/;
-    font-src 'self' https://fonts.gstatic.com/;
-    img-src 'self' 
-      https://assets.annuncianimali.it/
-      https://animaliadozionetoscana.wordpress.com/
-      https://www.rescuebouledoguefranceseitalia.it/
-      https://i.pinimg.com/
-      https://manualstech.ams3.cdn.digitaloceanspaces.com/
-      https://citynews-trevisotoday.stgy.ovh/
-      https://www.animaleamico.com/
-      https://lh6.googleusercontent.com/
-      https://www.vitadacani.org/
-      https://images.sbito.it/
-      https://www.enpaparma.it/
-      https://lh3.googleusercontent.com/
-      https://www.giornalelavoce.it/
-      https://www.centrotiziano.it/
-      https://img.poweredcache.net/
-      https://cdn.wamiz.fr/
-      https://www.comunicazioneiniziativeenpa.it/
-      https://www.anfipiemonte.org/
-      https://inregalo.net/
-      https://it.virbac.com/
-      https://img.freepik.com/
-      https://spca.bc.ca/;
-  "
-/>
+          httpEquiv="Content-Security-Policy"
+          content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;"
+        />
         <title>FurFind</title>
       </Helmet>
       <Router>

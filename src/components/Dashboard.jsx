@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import "../css/dashboard.css";
-import otherPets from "../pets/otherPets";
 import useWishlist from "../pets/useWishlist";
 import OtherSectionCard from "./OtherSectionCard";
 import { WishlistContext } from "../contexts/WishlistContext";
