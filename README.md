@@ -1,19 +1,74 @@
--- Project Description --
+# FurFind - Pet Adoption Platform
 
-# FurFind
+A full-stack web application designed to facilitate animal adoptions, connecting pets in need with potential adopters.
 
-This project is a web application designed to facilitate animal adoptions. Built with React about frontend and using Express, Node.js, and MongoDB about backend, the platform allows users to post their adoption listings freely. Users can create, view, and manage their announcements, making it easier to connect animals in need of homes with potential adopters. The application aims to raise awareness about animal adoption and streamline the process for both users and shelters.
+## Overview
 
+FurFind is a platform where users can freely post adoption listings, create accounts, and manage their announcements. Built to raise awareness about animal adoption and streamline the adoption process.
 
+## Features
 
+- User authentication (register/login)
+- Post adoption listings with images
+- Browse available pets
+- Search and filter functionality
+- Responsive design
+- Secure file upload
 
+## Tech Stack
 
-# React + Vite
+### Frontend
+- React 18
+- Vite
+- React Router
+- React Bootstrap
+- Axios
+- SASS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Backend
+- Node.js
+- Express.js
+- MongoDB with Mongoose
+- Passport.js (authentication)
+- Bcrypt (password hashing)
+- Multer (file uploads)
+- Helmet (security)
+- CORS
 
-Currently, two official plugins are available:
+## Getting Started
+```bash
+# Clone the repository
+git clone https://github.com/develhope/FS26-Team1-Project3.git
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# FS26-Team1-Project3
+# Install dependencies
+npm install
+
+# Set up environment variables
+# Create a .env file with:
+# MONGO_URI=your_mongodb_connection_string
+# SESSION_SECRET=your_session_secret
+
+# Start the backend server
+npm run devStart
+
+# Start the frontend development server (in another terminal)
+npm run dev
+
+# Frontend runs on http://localhost:5173
+# Backend runs on http://localhost:3000
+```
+
+## API Endpoints
+
+- `POST /iscriviti` - User registration
+- `POST /login` - User authentication
+- `POST /upload` - Upload pet for adoption
+- `GET /pets` - Get all pets
+
+## Team
+
+Developed collaboratively during Develhope Bootcamp.
+
+## License
+
+This project is for educational purposes.
